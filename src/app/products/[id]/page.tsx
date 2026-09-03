@@ -14,6 +14,10 @@ import { useCart } from '@/context/CartContext';
 import { ShoppingCart, Heart, Check, Truck, Shield } from 'lucide-react';
 import ProductCard from '@/components/ProductCard';
 
+export function generateStaticParams() {
+  return [{ slug: 'first-post' }, { slug: 'second-post' }]
+}
+
 export default function ProductDetailsPage({
   params,
 }: {
