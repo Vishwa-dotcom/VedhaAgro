@@ -12,6 +12,7 @@ import {
   Users,
   BarChart3,
   Eye,
+  Bell,
 } from 'lucide-react';
 import Link from 'next/link';
 import { Order } from '@/types';
@@ -23,6 +24,7 @@ export default function AdminDashboard() {
   >('overview');
   const [showAddProduct, setShowAddProduct] = useState(false);
   const [expandedOrderId, setExpandedOrderId] = useState<string | null>(null);
+  const [notifications, setNotifications] = useState<any[]>([]);
   const { products, addProduct, deleteProduct } = useProducts();
   const { orders } = useOrders();
   const [newProduct, setNewProduct] = useState({
@@ -35,13 +37,39 @@ export default function AdminDashboard() {
   });
 
   const totalProducts = products.length;
-  const totalStock = products.reduce((sum, p) => sum + p.quantity, 0);
+  const totalStock = products.reduce((sum, p) => sum + (p.quantity ?? 0), 0);
   const totalValue = products.reduce(
-    (sum, p) => sum + p.price * p.quantity,
+    (sum, p) => sum + p.price * (p.quantity ?? 0),
     0
   );
   const totalOrders = orders.length;
   const totalRevenue = orders.reduce((sum, order) => sum + order.total, 0);
+
+  useEffect(() => {
+    const loadNotifications = () => {
+      try {
+        const savedNotifications = localStorage.getItem('vedha-admin-notifications');
+        setNotifications(savedNotifications ? JSON.parse(savedNotifications) : []);
+      } catch (error) {
+        console.error('Failed to load admin notifications:', error);
+        setNotifications([]);
+      }
+    };
+
+    loadNotifications();
+
+    const handleAdminNotification = () => {
+      loadNotifications();
+    };
+
+    window.addEventListener('admin-notification', handleAdminNotification);
+    window.addEventListener('storage', handleAdminNotification);
+
+    return () => {
+      window.removeEventListener('admin-notification', handleAdminNotification);
+      window.removeEventListener('storage', handleAdminNotification);
+    };
+  }, []);
 
   const handleAddProduct = () => {
     if (newProduct.name && newProduct.category && newProduct.price && newProduct.quantity && newProduct.sku) {
@@ -99,6 +127,44 @@ export default function AdminDashboard() {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 pb-12">
+        <div className="mb-8 bg-yellow-50 border border-yellow-200 rounded-xl p-4">
+          <div className="flex items-center gap-3 mb-3">
+            <Bell className="text-yellow-600" size={20} />
+            <h2 className="text-lg font-bold text-gray-800">Admin Notifications</h2>
+          </div>
+
+          {notifications.length === 0 ? (
+            <p className="text-gray-600">No new orders yet. When a customer places an order, it will appear here immediately.</p>
+          ) : (
+            <div className="space-y-3">
+              {notifications.slice(0, 5).map((notification) => (
+                <div
+                  key={notification.id}
+                  className="rounded-lg border border-yellow-200 bg-white p-3"
+                >
+                  <div className="flex justify-between items-start gap-3">
+                    <div>
+                      <p className="font-bold text-gray-800">{notification.title}</p>
+                      <p className="text-sm text-gray-600">
+                        {notification.customerName} • {notification.totalAmount}
+                      </p>
+                    </div>
+                    <span className="text-xs text-gray-500">
+                      {new Date(notification.createdAt).toLocaleTimeString([], {
+                        hour: '2-digit',
+                        minute: '2-digit',
+                      })}
+                    </span>
+                  </div>
+                  <p className="text-sm text-gray-700 mt-2">
+                    Order ID: {notification.orderId}
+                  </p>
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
+
         {/* Navigation Tabs */}
         <div className="flex gap-4 mb-8 flex-wrap">
           {[
@@ -355,12 +421,14 @@ export default function AdminDashboard() {
                         <td className="px-6 py-4">
                           <span
                             className={`px-3 py-1 rounded-full text-sm font-bold ${
-                              product.quantity > 0
+                              product.quantity === null
+                                ? 'bg-gray-100 text-gray-700'
+                                : product.quantity > 0
                                 ? 'bg-green-100 text-green-700'
                                 : 'bg-red-100 text-red-700'
                             }`}
                           >
-                            {product.quantity}
+                            {product.quantity ?? 'Not set'}
                           </span>
                         </td>
                         <td className="px-6 py-4">

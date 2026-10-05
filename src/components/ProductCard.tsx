@@ -1,10 +1,14 @@
 'use client';
 
 import { Product } from '@/types';
-import { formatCurrency, calculateDiscount } from '@/lib/utils';
+import {
+  formatCurrency,
+  calculateDiscount,
+  getMinimumOrderQuantity,
+} from '@/lib/utils';
 import Link from 'next/link';
 import Image from 'next/image';
-import { ShoppingCart, Heart } from 'lucide-react';
+import { ShoppingCart, Heart, Package } from 'lucide-react';
 import { useState } from 'react';
 import { useCart } from '@/context/CartContext';
 
@@ -18,9 +22,10 @@ export default function ProductCard({ product }: ProductCardProps) {
   const discount = product.originalPrice
     ? calculateDiscount(product.originalPrice, product.price)
     : 0;
+  const minimumOrderQuantity = getMinimumOrderQuantity(product);
 
   const handleAddToCart = () => {
-    addItem(product, 1);
+    addItem(product, minimumOrderQuantity);
   };
 
   return (
@@ -28,13 +33,19 @@ export default function ProductCard({ product }: ProductCardProps) {
       {/* Image Container */}
       <Link href={`/products/${product.id}`} className="relative overflow-hidden">
         <div className="relative w-full h-48 bg-gray-100">
-          <Image
-            src={product.thumbnail || product.images[0]}
-            alt={product.name}
-            fill
-            className="object-cover hover:scale-110 transition-transform duration-300"
-            unoptimized
-          />
+          {product.thumbnail || product.images[0] ? (
+            <Image
+              src={product.thumbnail || product.images[0]}
+              alt={product.name}
+              fill
+              className="object-cover hover:scale-110 transition-transform duration-300"
+              unoptimized
+            />
+          ) : (
+            <div className="flex h-full items-center justify-center text-gray-400">
+              <Package size={44} strokeWidth={1.25} />
+            </div>
+          )}
         </div>
 
         {/* Discount Badge */}
@@ -81,6 +92,7 @@ export default function ProductCard({ product }: ProductCardProps) {
         {/* Price */}
         <div className="flex items-center gap-2 mb-3">
           <span className="text-lg font-bold text-green-600">
+            {product.priceTiers?.length ? 'From ' : ''}
             {formatCurrency(product.price)}
           </span>
           {product.originalPrice && (
@@ -89,27 +101,38 @@ export default function ProductCard({ product }: ProductCardProps) {
             </span>
           )}
         </div>
+        {product.priceTiers?.length ? (
+          <p className="text-xs text-gray-500 mb-3">
+            Minimum order: {minimumOrderQuantity} pcs
+          </p>
+        ) : null}
 
         {/* Stock Status */}
         <p
           className={`text-xs mb-3 ${
-            product.quantity > 0
+            product.quantity === null
+              ? 'text-gray-500'
+              : product.quantity > 0
               ? 'text-green-600 font-semibold'
               : 'text-red-600 font-semibold'
           }`}
         >
-          {product.quantity > 0 ? 'In Stock' : 'Out of Stock'}
+          {product.quantity === null
+            ? 'Stock availability on request'
+            : product.quantity > 0
+              ? 'In Stock'
+              : 'Out of Stock'}
         </p>
 
         {/* Buttons */}
         <div className="flex gap-2">
           <button
             onClick={handleAddToCart}
-            disabled={product.quantity <= 0}
+            disabled={product.quantity === 0}
             className="flex-1 bg-green-600 hover:bg-green-700 disabled:bg-gray-300 text-white py-2 rounded-md font-semibold text-sm transition flex items-center justify-center gap-2"
           >
             <ShoppingCart size={16} />
-            Add
+            Add {minimumOrderQuantity}+
           </button>
           <Link
             href={`/products/${product.id}`}

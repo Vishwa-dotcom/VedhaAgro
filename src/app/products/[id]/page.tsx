@@ -8,33 +8,39 @@ import {
   formatCurrency,
   calculateDiscount,
   truncateText,
+  getMinimumOrderQuantity,
+  getProductPrice,
 } from '@/lib/utils';
-import { useState } from 'react';
+import { use, useEffect, useState } from 'react';
 import { useCart } from '@/context/CartContext';
-import { ShoppingCart, Heart, Check, Truck, Shield } from 'lucide-react';
+import { ShoppingCart, Heart, Check, Truck, Shield, Package } from 'lucide-react';
 import ProductCard from '@/components/ProductCard';
-
-export function generateStaticParams() {
-  return [{ slug: 'first-post' }, { slug: 'second-post' }]
-}
 
 export default function ProductDetailsPage({
   params,
 }: {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 }) {
+  const { id } = use(params);
   const { products } = useProducts();
-  const product = products.find((p) => p.id === params.id);
+  const product = products.find((p) => p.id === id);
 
   if (!product) {
     notFound();
   }
 
+  const minimumOrderQuantity = getMinimumOrderQuantity(product);
   const { addItem } = useCart();
-  const [quantity, setQuantity] = useState(1);
+  const [quantity, setQuantity] = useState(minimumOrderQuantity);
   const [isWishlisted, setIsWishlisted] = useState(false);
-  const [selectedImage, setSelectedImage] = useState(product.images[0]);
+  const [selectedImage, setSelectedImage] = useState(product.images[0] ?? '');
   const [addedToCart, setAddedToCart] = useState(false);
+
+  useEffect(() => {
+    setSelectedImage(product.images[0] ?? '');
+    setQuantity(minimumOrderQuantity);
+    setAddedToCart(false);
+  }, [product.id, minimumOrderQuantity, product.images]);
 
   const discount = product.originalPrice
     ? calculateDiscount(product.originalPrice, product.price)
@@ -74,13 +80,19 @@ export default function ProductDetailsPage({
             {/* Main Image */}
             <div className="relative bg-gray-100 rounded-lg overflow-hidden mb-4">
               <div className="relative w-full h-96">
-                <Image
-                  src={selectedImage}
-                  alt={product.name}
-                  fill
-                  className="object-cover"
-                  unoptimized
-                />
+                {selectedImage ? (
+                  <Image
+                    src={selectedImage}
+                    alt={product.name}
+                    fill
+                    className="object-cover"
+                    unoptimized
+                  />
+                ) : (
+                  <div className="flex h-96 items-center justify-center text-gray-400">
+                    <Package size={72} strokeWidth={1.25} />
+                  </div>
+                )}
               </div>
 
               {/* Discount Badge */}
@@ -145,7 +157,7 @@ export default function ProductDetailsPage({
             <div className="mb-6 p-4 bg-gray-50 rounded-lg">
               <div className="flex items-center gap-4 mb-2">
                 <span className="text-3xl font-bold text-green-600">
-                  {formatCurrency(product.price)}
+                  {formatCurrency(getProductPrice(product, quantity))}
                 </span>
                 {product.originalPrice && (
                   <>
@@ -158,11 +170,34 @@ export default function ProductDetailsPage({
                   </>
                 )}
               </div>
+              {product.priceTiers?.length ? (
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm text-left">
+                    <thead className="text-gray-500">
+                      <tr>
+                        <th className="py-2 font-medium">Minimum quantity</th>
+                        <th className="py-2 text-right font-medium">Unit price</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {product.priceTiers.map((tier) => (
+                        <tr key={tier.minimumQuantity} className="border-t border-gray-200">
+                          <td className="py-2">{tier.minimumQuantity}+ pcs</td>
+                          <td className="py-2 text-right font-semibold">
+                            {formatCurrency(tier.price)}
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              ) : null}
             </div>
 
             {/* Specifications */}
             <div className="mb-8">
-              <h3 className="font-bold text-lg mb-4 text-gray-800">Specifications</h3>
+              <h3 className="font-bold text-lg mb-4 text-gray-800">Product Specifications</h3>
+              {Object.keys(product.specifications).length > 0 ? (
               <div className="grid md:grid-cols-2 gap-4">
                 {Object.entries(product.specifications).map(([key, value]) => (
                   <div
@@ -176,10 +211,15 @@ export default function ProductDetailsPage({
                   </div>
                 ))}
               </div>
+              ) : (
+                <p className="text-gray-600">
+                  The pricelist does not provide additional specifications for this item.
+                </p>
+              )}
             </div>
 
             {/* Features */}
-            <div className="mb-8">
+            {product.features.length > 0 && <div className="mb-8">
               <h3 className="font-bold text-lg mb-4 text-gray-800">Key Features</h3>
               <ul className="space-y-2">
                 {product.features.map((feature, idx) => (
@@ -189,27 +229,34 @@ export default function ProductDetailsPage({
                   </li>
                 ))}
               </ul>
-            </div>
+            </div>}
 
             {/* Stock Status */}
             <div className="mb-8">
               <p
                 className={`text-lg font-semibold ${
-                  product.quantity > 0 ? 'text-green-600' : 'text-red-600'
+                  product.quantity === null
+                    ? 'text-gray-600'
+                    : product.quantity > 0
+                      ? 'text-green-600'
+                      : 'text-red-600'
                 }`}
               >
-                {product.quantity > 0
-                  ? `${product.quantity} in stock`
-                  : 'Out of Stock'}
+                {product.quantity === null
+                  ? 'Stock availability confirmed when ordering'
+                  : product.quantity > 0
+                    ? `${product.quantity} in stock`
+                    : 'Out of Stock'}
               </p>
             </div>
 
             {/* Quantity & Add to Cart */}
-            {product.quantity > 0 && (
+            {product.quantity !== 0 && (
               <div className="mb-8 flex gap-4">
                 <div className="flex items-center border border-gray-300 rounded-lg">
                   <button
-                    onClick={() => setQuantity(Math.max(1, quantity - 1))}
+                    onClick={() => setQuantity(Math.max(minimumOrderQuantity, quantity - 1))}
+                    aria-label="Decrease quantity"
                     className="px-4 py-2 text-gray-600 hover:bg-gray-100"
                   >
                     −
@@ -218,16 +265,20 @@ export default function ProductDetailsPage({
                     type="number"
                     value={quantity}
                     onChange={(e) =>
-                      setQuantity(Math.max(1, parseInt(e.target.value) || 1))
+                      setQuantity(Math.max(minimumOrderQuantity, parseInt(e.target.value) || minimumOrderQuantity))
                     }
+                    aria-label="Product quantity"
                     className="w-16 text-center py-2 focus:outline-none"
-                    min="1"
-                    max={product.quantity}
+                    min={minimumOrderQuantity}
+                    max={product.quantity ?? undefined}
                   />
                   <button
                     onClick={() =>
-                      setQuantity(Math.min(product.quantity, quantity + 1))
+                      setQuantity(product.quantity === null
+                        ? quantity + 1
+                        : Math.min(product.quantity, quantity + 1))
                     }
+                    aria-label="Increase quantity"
                     className="px-4 py-2 text-gray-600 hover:bg-gray-100"
                   >
                     +
@@ -244,8 +295,16 @@ export default function ProductDetailsPage({
               </div>
             )}
 
+            <Link
+              href="/cart"
+              className="mb-8 flex items-center justify-center gap-2 border border-green-700 px-5 py-3 text-green-800 font-semibold hover:bg-green-50"
+            >
+              <ShoppingCart size={18} />
+              View Cart
+            </Link>
+
             {/* Buy Now Button */}
-            {product.quantity > 0 && (
+            {product.quantity !== 0 && (
               <Link
                 href="/checkout"
                 className="block text-center border-2 border-green-600 hover:bg-green-50 text-green-600 py-3 rounded-lg font-bold transition mb-8"

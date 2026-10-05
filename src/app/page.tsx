@@ -5,13 +5,7 @@ import ProductCard from '@/components/ProductCard';
 import { products } from '@/lib/sampleData';
 
 export default function Home() {
-  // Get featured products (first 4)
-  const featuredProducts = products.slice(0, 4);
-  
-  // Get top sellers (products with high stock and sales appeal)
-  const topSellers = products
-    .filter((p) => p.quantity > 0)
-    .slice(0, 3);
+  const featuredProducts = products;
 
   return (
     <div>
@@ -47,14 +41,15 @@ export default function Home() {
           </div>
 
           {/* Hero Image */}
-          <div className="relative h-96">
+          <div className="relative h-[420px] rounded-3xl overflow-hidden border-4 border-white/50 shadow-2xl">
             <Image
-              src="https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=600"
-              alt="Agricultural farming"
+              src="/sources/front.png"
+              alt="Vedha Agro product banner"
               fill
-              className="object-cover rounded-lg"
-              unoptimized
+              className="object-cover"
+              priority
             />
+            <div className="absolute inset-0 bg-gradient-to-r from-green-900/10 via-transparent to-transparent" />
           </div>
         </div>
       </section>
@@ -124,10 +119,10 @@ export default function Home() {
           <div className="flex justify-between items-center mb-12">
             <div>
               <h2 className="text-3xl md:text-4xl font-bold text-gray-800">
-                Featured Products
+                Products From Our Catalog
               </h2>
               <p className="text-gray-600 mt-2">
-                Check out our most popular agricultural products
+                Browse the products and prices currently available from our pricelist
               </p>
             </div>
             <Link
@@ -139,7 +134,7 @@ export default function Home() {
             </Link>
           </div>
 
-          <div className="grid md:grid-cols-4 gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {featuredProducts.map((product) => (
               <ProductCard key={product.id} product={product} />
             ))}
@@ -221,30 +216,6 @@ export default function Home() {
                   </h3>
                 </div>
               </div>
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Top Sellers Section */}
-      <section className="py-16 px-4">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800">
-            Top Sellers
-          </h2>
-
-          <div className="grid md:grid-cols-3 gap-6 mb-8">
-            {topSellers.map((product) => (
-              <ProductCard key={product.id} product={product} />
-            ))}
-          </div>
-
-          <div className="text-center">
-            <Link
-              href="/products"
-              className="inline-block bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-lg font-bold transition"
-            >
-              Browse All Products
             </Link>
           </div>
         </div>

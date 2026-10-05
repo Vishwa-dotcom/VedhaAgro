@@ -2,6 +2,7 @@
 
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import { Order } from '@/types';
+import { products as catalogProducts } from '@/lib/sampleData';
 
 interface OrderContextType {
   orders: Order[];
@@ -24,9 +25,14 @@ export const OrderProvider: React.FC<{ children: React.ReactNode }> = ({
     if (savedOrders) {
       try {
         const parsedOrders = JSON.parse(savedOrders);
+        const catalogById = new Map(catalogProducts.map((product) => [product.id, product]));
         // Convert date strings back to Date objects
         const ordersWithDates = parsedOrders.map((order: any) => ({
           ...order,
+          items: order.items.map((item: Order['items'][number]) => ({
+            ...item,
+            productName: catalogById.get(item.productId)?.name ?? item.productName,
+          })),
           createdAt: new Date(order.createdAt),
           updatedAt: new Date(order.updatedAt),
         }));

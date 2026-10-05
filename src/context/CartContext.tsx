@@ -1,7 +1,9 @@
 'use client';
 
-import React, { createContext, useContext, useState, useEffect } from 'react';
+import React, { createContext, useContext, useState, useEffect, useRef } from 'react';
 import { CartItem, Product } from '@/types';
+import { getMinimumOrderQuantity, getProductPrice } from '@/lib/utils';
+import { products as catalogProducts } from '@/lib/sampleData';
 
 interface CartContextType {
   items: CartItem[];
@@ -22,13 +24,28 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({
 }) => {
   const [items, setItems] = useState<CartItem[]>([]);
   const [mounted, setMounted] = useState(false);
+  const itemsRef = useRef<CartItem[]>([]);
 
   // Load cart from localStorage on mount
   useEffect(() => {
     const savedCart = localStorage.getItem('vedha-cart');
     if (savedCart) {
       try {
-        setItems(JSON.parse(savedCart));
+        const catalogById = new Map(catalogProducts.map((product) => [product.id, product]));
+        const savedItems = JSON.parse(savedCart) as CartItem[];
+        const restoredItems = savedItems.map((item) => {
+          const product = catalogById.get(item.productId) ?? item.product;
+          if (!product) return item;
+          const quantity = Math.max(getMinimumOrderQuantity(product), item.quantity);
+          return {
+            ...item,
+            product,
+            quantity,
+            price: getProductPrice(product, quantity),
+          };
+        });
+        itemsRef.current = restoredItems;
+        setItems(restoredItems);
       } catch (error) {
         console.error('Failed to load cart:', error);
       }
@@ -43,36 +60,39 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({
     }
   }, [items, mounted]);
 
+  const commitItems = (nextItems: CartItem[]) => {
+    itemsRef.current = nextItems;
+    setItems(nextItems);
+    localStorage.setItem('vedha-cart', JSON.stringify(nextItems));
+  };
+
   const addItem = (product: Product, quantity: number) => {
-    setItems((prevItems) => {
-      const existingItem = prevItems.find((item) => item.productId === product.id);
-
-      if (existingItem) {
-        return prevItems.map((item) =>
-          item.productId === product.id
-            ? { ...item, quantity: item.quantity + quantity }
-            : item
-        );
-      }
-
-      return [
-        ...prevItems,
-        {
+    const minimumOrderQuantity = getMinimumOrderQuantity(product);
+    const requestedQuantity = Math.max(minimumOrderQuantity, quantity);
+    const existingItem = itemsRef.current.find((item) => item.productId === product.id);
+    const nextQuantity = (existingItem?.quantity ?? 0) + requestedQuantity;
+    const nextItem: CartItem = existingItem
+      ? {
+          ...existingItem,
+          quantity: nextQuantity,
+          price: getProductPrice(product, nextQuantity),
+          product,
+        }
+      : {
           id: `cart-${product.id}-${Date.now()}`,
           productId: product.id,
           product,
-          quantity,
-          price: product.price,
+          quantity: nextQuantity,
+          price: getProductPrice(product, nextQuantity),
           addedAt: new Date(),
-        },
-      ];
-    });
+        };
+    commitItems(existingItem
+      ? itemsRef.current.map((item) => item.productId === product.id ? nextItem : item)
+      : [...itemsRef.current, nextItem]);
   };
 
   const removeItem = (productId: string) => {
-    setItems((prevItems) =>
-      prevItems.filter((item) => item.productId !== productId)
-    );
+    commitItems(itemsRef.current.filter((item) => item.productId !== productId));
   };
 
   const updateQuantity = (productId: string, quantity: number) => {
@@ -81,15 +101,22 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({
       return;
     }
 
-    setItems((prevItems) =>
-      prevItems.map((item) =>
-        item.productId === productId ? { ...item, quantity } : item
-      )
-    );
+    commitItems(itemsRef.current.map((item) => {
+      if (item.productId !== productId) return item;
+      const minimumQuantity = item.product
+        ? getMinimumOrderQuantity(item.product)
+        : 1;
+      const nextQuantity = Math.max(minimumQuantity, quantity);
+      return {
+        ...item,
+        quantity: nextQuantity,
+        price: item.product ? getProductPrice(item.product, nextQuantity) : item.price,
+      };
+    }));
   };
 
   const clearCart = () => {
-    setItems([]);
+    commitItems([]);
   };
 
   const getTotalItems = () => {

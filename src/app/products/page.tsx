@@ -44,7 +44,7 @@ export default function ProductsPage() {
         case 'price-high':
           return b.price - a.price;
         case 'popular':
-          return b.quantity - a.quantity;
+          return (b.quantity ?? 0) - (a.quantity ?? 0);
         case 'latest':
         default:
           return new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime();

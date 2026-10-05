@@ -1,0 +1,3760 @@
+[
+  {
+    "id": "1",
+    "name": "VEDHA PRO+ 16L",
+    "category": "Battery Sprayers",
+    "priceTiers": [
+      {
+        "minimumQuantity": 300,
+        "price": 2520
+      },
+      {
+        "minimumQuantity": 60,
+        "price": 2550
+      },
+      {
+        "minimumQuantity": 15,
+        "price": 2580
+      }
+    ]
+  },
+  {
+    "id": "2",
+    "name": "VEDHA-04 DUAL SPRAYER 20L",
+    "category": "Battery Sprayers",
+    "priceTiers": [
+      {
+        "minimumQuantity": 300,
+        "price": 3020
+      },
+      {
+        "minimumQuantity": 60,
+        "price": 3050
+      },
+      {
+        "minimumQuantity": 15,
+        "price": 3080
+      }
+    ]
+  },
+  {
+    "id": "3",
+    "name": "VEDHA–02 16L",
+    "category": "Battery Sprayers",
+    "priceTiers": [
+      {
+        "minimumQuantity": 300,
+        "price": 2390
+      },
+      {
+        "minimumQuantity": 60,
+        "price": 2420
+      },
+      {
+        "minimumQuantity": 15,
+        "price": 2450
+      }
+    ]
+  },
+  {
+    "id": "4",
+    "name": "VEDHA NEW 16L",
+    "category": "Battery Sprayers",
+    "priceTiers": [
+      {
+        "minimumQuantity": 300,
+        "price": 2170
+      },
+      {
+        "minimumQuantity": 60,
+        "price": 2200
+      },
+      {
+        "minimumQuantity": 15,
+        "price": 2230
+      }
+    ]
+  },
+  {
+    "id": "5",
+    "name": "VEDHA-10 16L",
+    "category": "Battery Sprayers",
+    "priceTiers": [
+      {
+        "minimumQuantity": 300,
+        "price": 1790
+      },
+      {
+        "minimumQuantity": 60,
+        "price": 1820
+      },
+      {
+        "minimumQuantity": 15,
+        "price": 1850
+      }
+    ]
+  },
+  {
+    "id": "6",
+    "name": "SISA-04 20L",
+    "category": "Battery Sprayers",
+    "priceTiers": [
+      {
+        "minimumQuantity": 300,
+        "price": 2480
+      },
+      {
+        "minimumQuantity": 60,
+        "price": 2510
+      },
+      {
+        "minimumQuantity": 15,
+        "price": 2540
+      }
+    ]
+  },
+  {
+    "id": "7",
+    "name": "SISA-02 16L",
+    "category": "Battery Sprayers",
+    "priceTiers": [
+      {
+        "minimumQuantity": 300,
+        "price": 2290
+      },
+      {
+        "minimumQuantity": 60,
+        "price": 2320
+      },
+      {
+        "minimumQuantity": 15,
+        "price": 2350
+      }
+    ]
+  },
+  {
+    "id": "8",
+    "name": "SISA 2 IN 1 16L",
+    "category": "Battery Sprayers",
+    "priceTiers": [
+      {
+        "minimumQuantity": 300,
+        "price": 1650
+      },
+      {
+        "minimumQuantity": 60,
+        "price": 1680
+      },
+      {
+        "minimumQuantity": 15,
+        "price": 1710
+      }
+    ]
+  },
+  {
+    "id": "9",
+    "name": "SISA-08 16L",
+    "category": "Battery Sprayers",
+    "priceTiers": [
+      {
+        "minimumQuantity": 300,
+        "price": 1520
+      },
+      {
+        "minimumQuantity": 60,
+        "price": 1550
+      },
+      {
+        "minimumQuantity": 15,
+        "price": 1580
+      }
+    ]
+  },
+  {
+    "id": "10",
+    "name": "SISA-10 16L",
+    "category": "Battery Sprayers",
+    "priceTiers": [
+      {
+        "minimumQuantity": 300,
+        "price": 1790
+      },
+      {
+        "minimumQuantity": 60,
+        "price": 1820
+      },
+      {
+        "minimumQuantity": 15,
+        "price": 1850
+      }
+    ]
+  },
+  {
+    "id": "11",
+    "name": "RAINMARK-02 16L",
+    "category": "Battery Sprayers",
+    "priceTiers": [
+      {
+        "minimumQuantity": 300,
+        "price": 2490
+      },
+      {
+        "minimumQuantity": 60,
+        "price": 2520
+      },
+      {
+        "minimumQuantity": 15,
+        "price": 2550
+      }
+    ]
+  },
+  {
+    "id": "12",
+    "name": "RAINMARK-04 DUAL SRAYER",
+    "category": "Battery Sprayers",
+    "priceTiers": [
+      {
+        "minimumQuantity": 300,
+        "price": 3050
+      },
+      {
+        "minimumQuantity": 60,
+        "price": 3080
+      },
+      {
+        "minimumQuantity": 15,
+        "price": 3110
+      }
+    ]
+  },
+  {
+    "id": "13",
+    "name": "RICHFLOW PRO + 16L",
+    "category": "Battery Sprayers",
+    "priceTiers": [
+      {
+        "minimumQuantity": 300,
+        "price": 2170
+      },
+      {
+        "minimumQuantity": 60,
+        "price": 2200
+      },
+      {
+        "minimumQuantity": 15,
+        "price": 2230
+      }
+    ]
+  },
+  {
+    "id": "14",
+    "name": "RICHFLOW-02 16L",
+    "category": "Battery Sprayers",
+    "priceTiers": [
+      {
+        "minimumQuantity": 300,
+        "price": 2210
+      },
+      {
+        "minimumQuantity": 60,
+        "price": 2240
+      },
+      {
+        "minimumQuantity": 15,
+        "price": 2270
+      }
+    ]
+  },
+  {
+    "id": "15",
+    "name": "WING MODEL 16L",
+    "category": "Battery Sprayers",
+    "priceTiers": [
+      {
+        "minimumQuantity": 300,
+        "price": 2120
+      },
+      {
+        "minimumQuantity": 60,
+        "price": 2150
+      },
+      {
+        "minimumQuantity": 15,
+        "price": 2180
+      }
+    ]
+  },
+  {
+    "id": "16",
+    "name": "STRAIGHT LINE MODEL 16L",
+    "category": "Battery Sprayers",
+    "priceTiers": [
+      {
+        "minimumQuantity": 300,
+        "price": 2170
+      },
+      {
+        "minimumQuantity": 60,
+        "price": 2200
+      },
+      {
+        "minimumQuantity": 15,
+        "price": 2230
+      }
+    ]
+  },
+  {
+    "id": "17",
+    "name": "MUSCLE ORANGE MUSCLE ORANGE SPRAYER 20L",
+    "category": "Battery Sprayers",
+    "priceTiers": [
+      {
+        "minimumQuantity": 300,
+        "price": 2250
+      },
+      {
+        "minimumQuantity": 60,
+        "price": 2280
+      },
+      {
+        "minimumQuantity": 15,
+        "price": 2310
+      }
+    ]
+  },
+  {
+    "id": "18",
+    "name": "12V14AH GOLD DUAL SPRAYER",
+    "category": "Battery Sprayers",
+    "priceTiers": [
+      {
+        "minimumQuantity": 300,
+        "price": 2230
+      },
+      {
+        "minimumQuantity": 60,
+        "price": 2250
+      },
+      {
+        "minimumQuantity": 15,
+        "price": 2280
+      }
+    ]
+  },
+  {
+    "id": "19",
+    "name": "WAVE SPRAYER 20L",
+    "category": "Battery Sprayers",
+    "priceTiers": [
+      {
+        "minimumQuantity": 300,
+        "price": 2350
+      },
+      {
+        "minimumQuantity": 60,
+        "price": 2380
+      },
+      {
+        "minimumQuantity": 15,
+        "price": 2410
+      }
+    ]
+  },
+  {
+    "id": "20",
+    "name": "DUAL SPRAYER BATMAN GREEN",
+    "category": "Battery Sprayers",
+    "priceTiers": [
+      {
+        "minimumQuantity": 300,
+        "price": 1920
+      },
+      {
+        "minimumQuantity": 60,
+        "price": 1950
+      },
+      {
+        "minimumQuantity": 15,
+        "price": 1980
+      }
+    ]
+  },
+  {
+    "id": "22",
+    "name": "2 PARTS RED AND WHITE",
+    "category": "Battery Sprayers",
+    "priceTiers": [
+      {
+        "minimumQuantity": 300,
+        "price": 2250
+      },
+      {
+        "minimumQuantity": 60,
+        "price": 2280
+      },
+      {
+        "minimumQuantity": 15,
+        "price": 2310
+      }
+    ]
+  },
+  {
+    "id": "23",
+    "name": "GREEN LADY 16L",
+    "category": "Battery Sprayers",
+    "priceTiers": [
+      {
+        "minimumQuantity": 300,
+        "price": 2120
+      },
+      {
+        "minimumQuantity": 60,
+        "price": 2150
+      },
+      {
+        "minimumQuantity": 15,
+        "price": 2180
+      }
+    ]
+  },
+  {
+    "id": "24",
+    "name": "BLUE LADY 16L",
+    "category": "Battery Sprayers",
+    "priceTiers": [
+      {
+        "minimumQuantity": 300,
+        "price": 2020
+      },
+      {
+        "minimumQuantity": 60,
+        "price": 2050
+      },
+      {
+        "minimumQuantity": 15,
+        "price": 2080
+      }
+    ]
+  },
+  {
+    "id": "25",
+    "name": "RED BOX STRAIGHT 16L",
+    "category": "Battery Sprayers",
+    "priceTiers": [
+      {
+        "minimumQuantity": 300,
+        "price": 2020
+      },
+      {
+        "minimumQuantity": 60,
+        "price": 2050
+      },
+      {
+        "minimumQuantity": 15,
+        "price": 2080
+      }
+    ]
+  },
+  {
+    "id": "26",
+    "name": "SISA PORTABLE SPRAYER",
+    "category": "Battery Sprayers",
+    "priceTiers": [
+      {
+        "minimumQuantity": 300,
+        "price": 2050
+      },
+      {
+        "minimumQuantity": 60,
+        "price": 2080
+      },
+      {
+        "minimumQuantity": 15,
+        "price": 2110
+      }
+    ]
+  },
+  {
+    "id": "27",
+    "name": "PORTABLE SPRAYER",
+    "category": "Battery Sprayers",
+    "priceTiers": [
+      {
+        "minimumQuantity": 300,
+        "price": 1850
+      },
+      {
+        "minimumQuantity": 60,
+        "price": 1880
+      },
+      {
+        "minimumQuantity": 15,
+        "price": 1910
+      }
+    ]
+  },
+  {
+    "id": "28",
+    "name": "139-F 4 STROKE RAINMARK PRO+",
+    "category": "Agricultural Equipment",
+    "priceTiers": [
+      {
+        "minimumQuantity": 300,
+        "price": 7300
+      },
+      {
+        "minimumQuantity": 60,
+        "price": 7400
+      },
+      {
+        "minimumQuantity": 15,
+        "price": 7500
+      }
+    ]
+  },
+  {
+    "id": "29",
+    "name": "139-F 4 STROKE VEDHA SINGLE",
+    "category": "Agricultural Equipment",
+    "priceTiers": [
+      {
+        "minimumQuantity": 300,
+        "price": 6700
+      },
+      {
+        "minimumQuantity": 60,
+        "price": 6800
+      },
+      {
+        "minimumQuantity": 15,
+        "price": 6900
+      }
+    ]
+  },
+  {
+    "id": "30",
+    "name": "GX-35 4 STROKE VEDHA SINGLE",
+    "category": "Agricultural Equipment",
+    "priceTiers": [
+      {
+        "minimumQuantity": 300,
+        "price": 6900
+      },
+      {
+        "minimumQuantity": 60,
+        "price": 7000
+      },
+      {
+        "minimumQuantity": 15,
+        "price": 7100
+      }
+    ]
+  },
+  {
+    "id": "40",
+    "name": "SISA 12V9AH BATTERY",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 570
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 590
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 610
+      }
+    ]
+  },
+  {
+    "id": "41",
+    "name": "SISA 12V10AH BATTERY",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 640
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 660
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 680
+      }
+    ]
+  },
+  {
+    "id": "42",
+    "name": "SISA PLUS 12V14AH BATTERY",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 960
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 980
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 1010
+      }
+    ]
+  },
+  {
+    "id": "43",
+    "name": "SISA PLUS 12V16AH BATTERY",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 1000
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 1020
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 1040
+      }
+    ]
+  },
+  {
+    "id": "45",
+    "name": "CHILWEE SCREW 12V18AH BATTERY",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 1220
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 1240
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 1260
+      }
+    ]
+  },
+  {
+    "id": "46",
+    "name": "JHUHA COLOUR 12V18AH BATTERY",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 1050
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 1070
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 1090
+      }
+    ]
+  },
+  {
+    "id": "47",
+    "name": "SISA 12V16AH BATTERY",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 1250
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 1270
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 1290
+      }
+    ]
+  },
+  {
+    "id": "48",
+    "name": "SISA 12V22AH BATTERY",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 990
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 1020
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 1050
+      }
+    ]
+  },
+  {
+    "id": "49",
+    "name": "RICHFLOW COLOUR 12V16AH",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 970
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 990
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 1010
+      }
+    ]
+  },
+  {
+    "id": "50",
+    "name": "PLAIN GREEN-GRAY BATTERY",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 960
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 980
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 1000
+      }
+    ]
+  },
+  {
+    "id": "51",
+    "name": "PLAIN LEMON-BLACK BATTERY",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 910
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 930
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 950
+      }
+    ]
+  },
+  {
+    "id": "53",
+    "name": "JHUHA OR SHENGDELI",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 760
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 780
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 800
+      }
+    ]
+  },
+  {
+    "id": "54",
+    "name": "JHUHA OR B",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 59
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 610
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 630
+      }
+    ]
+  },
+  {
+    "id": "56",
+    "name": "SISA 120 PSI MOTOR (COPPER)",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 290
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 300
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 310
+      }
+    ]
+  },
+  {
+    "id": "57",
+    "name": "SISA 135 PSI MOTOR (COPPER)",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 320
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 330
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 340
+      }
+    ]
+  },
+  {
+    "id": "58",
+    "name": "SISA 145 PSI MOTOR (COPPER)",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 350
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 360
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 370
+      }
+    ]
+  },
+  {
+    "id": "59",
+    "name": "SISA 250 PSI MOTOR (COPPER)",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 62
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 640
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 660
+      }
+    ]
+  },
+  {
+    "id": "60",
+    "name": "RICHFLOW 135 PSI 7 LPM MOTOR",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 300
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 310
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 320
+      }
+    ]
+  },
+  {
+    "id": "61",
+    "name": "RAINMARK 135PSI MOTOR",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 300
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 310
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 320
+      }
+    ]
+  },
+  {
+    "id": "62",
+    "name": "SVM ORIGINAL GREEN 7 LPM",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 265
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 270
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 275
+      }
+    ]
+  },
+  {
+    "id": "63",
+    "name": "EARTH ORIGINAL GREEN 6 LPM",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 275
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 280
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 285
+      }
+    ]
+  },
+  {
+    "id": "64",
+    "name": "EARTH ORIGINAL SKY 6 LPM",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 265
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 270
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 275
+      }
+    ]
+  },
+  {
+    "id": "65",
+    "name": "EARTH ORIGINAL",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 250
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 255
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 265
+      }
+    ]
+  },
+  {
+    "id": "66",
+    "name": "SVM ORIGINAL",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 175
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 180
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 185
+      }
+    ]
+  },
+  {
+    "id": "67",
+    "name": "SVM ORIGINAL",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 350
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 360
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 370
+      }
+    ]
+  },
+  {
+    "id": "68",
+    "name": "EARTH ORIGINAL",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 410
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 420
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 430
+      }
+    ]
+  },
+  {
+    "id": "69",
+    "name": "EARTH ORIGINAL",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 190
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 195
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 200
+      }
+    ]
+  },
+  {
+    "id": "70",
+    "name": "SISA 500 PSI",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 990
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 1010
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 1030
+      }
+    ]
+  },
+  {
+    "id": "71",
+    "name": "SISA 500 PSI",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 1020
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 1040
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 1060
+      }
+    ]
+  },
+  {
+    "id": "72",
+    "name": "SISA",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 55
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 57
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 60
+      }
+    ]
+  },
+  {
+    "id": "73",
+    "name": "COLOUR CHARGER CHINA ‘SISA’",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 190
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 195
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 200
+      }
+    ]
+  },
+  {
+    "id": "74",
+    "name": "CHARGER ‘TANNENG’ 1.7 AMP 1.5",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 165
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 170
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 175
+      }
+    ]
+  },
+  {
+    "id": "75",
+    "name": "DIGITAL",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 140
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 145
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 150
+      }
+    ]
+  },
+  {
+    "id": "76",
+    "name": "PREMIUM LITHIUM BATTERY",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 140
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 145
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 150
+      }
+    ]
+  },
+  {
+    "id": "77",
+    "name": "CHARGER ‘CSM’ ORIGINAL 2.0",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 115
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 120
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 125
+      }
+    ]
+  },
+  {
+    "id": "78",
+    "name": "CHARGER ‘CSM’ 2.5 AMP",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 95
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 97
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 100
+      }
+    ]
+  },
+  {
+    "id": "79",
+    "name": "NEW CHARGER ‘CSM’ ORIGINAL",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 125
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 130
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 135
+      }
+    ]
+  },
+  {
+    "id": "80",
+    "name": "CHARGER ‘K’ 2.5 AMP",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 100
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 105
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 110
+      }
+    ]
+  },
+  {
+    "id": "81",
+    "name": "CHARGER 2.5 AMP 1.5 METER",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 90
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 95
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 100
+      }
+    ]
+  },
+  {
+    "id": "82",
+    "name": "REGULATOR TRANSPARENT WITH",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 35
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 36
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 37
+      }
+    ]
+  },
+  {
+    "id": "83",
+    "name": "COLOUR REGULATOR",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 37
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 38
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 39
+      }
+    ]
+  },
+  {
+    "id": "84",
+    "name": "REGULATOR TRANSPARENT",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 40
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 41
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 42
+      }
+    ]
+  },
+  {
+    "id": "85",
+    "name": "COLOUR SISA REGULATOR",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 45
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 46
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 47
+      }
+    ]
+  },
+  {
+    "id": "86",
+    "name": "BRASS LANCE IMPORTED",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 64
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 66
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 68
+      }
+    ]
+  },
+  {
+    "id": "87",
+    "name": "FULL SS PREMIUM LANCE",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 66
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 68
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 70
+      }
+    ]
+  },
+  {
+    "id": "88",
+    "name": "RED GRIP STRAIGHT BRASS",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 78
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 80
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 82
+      }
+    ]
+  },
+  {
+    "id": "89",
+    "name": "1 HEAD BRASS COLOUR LANCE",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 36
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 38
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 40
+      }
+    ]
+  },
+  {
+    "id": "91",
+    "name": "SINLEADER PREMIUM PVC",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 25
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 27
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 30
+      }
+    ]
+  },
+  {
+    "id": "92",
+    "name": "PVC LANCE COLOUR LIKE",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 15
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 16
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 17
+      }
+    ]
+  },
+  {
+    "id": "93",
+    "name": "3 FT SS 304 LANCE",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 50
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 52
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 54
+      }
+    ]
+  },
+  {
+    "id": "95",
+    "name": "DHOSARI 40’’INCH PVC",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 30
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 32
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 34
+      }
+    ]
+  },
+  {
+    "id": "96",
+    "name": "BIG SS 3 FACE LANCE",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 62
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 64
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 66
+      }
+    ]
+  },
+  {
+    "id": "97",
+    "name": "3 WAY EXTENSTION ROD FOR",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 37
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 40
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 43
+      }
+    ]
+  },
+  {
+    "id": "100",
+    "name": "SS CAR BELT WITH HEAVY PAD",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 40
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 42
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 44
+      }
+    ]
+  },
+  {
+    "id": "101",
+    "name": "PVC CAR BELT WITH HEAVY PAD",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 35
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 37
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 39
+      }
+    ]
+  },
+  {
+    "id": "102",
+    "name": "CAR BELT ONLY (CHINA)",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 22
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 24
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 26
+      }
+    ]
+  },
+  {
+    "id": "103",
+    "name": "HEAVY SILVER DILIVERY PIPE",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 17
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 19
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 21
+      }
+    ]
+  },
+  {
+    "id": "104",
+    "name": "HEAVY SISA DILIVERY PIPE",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 20
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 22
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 24
+      }
+    ]
+  },
+  {
+    "id": "105",
+    "name": "HEAVY RICHFLOW DILIVERY PIPE",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 22
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 24
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 26
+      }
+    ]
+  },
+  {
+    "id": "106",
+    "name": "HEAVY DILIVERY PIPE BRAIDED",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 21
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 23
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 25
+      }
+    ]
+  },
+  {
+    "id": "107",
+    "name": "HEAVY RAINMARK DILIVERY",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 28
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 30
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 32
+      }
+    ]
+  },
+  {
+    "id": "108",
+    "name": "SINLEADER COLOUR HEAVY",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 34
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 36
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 38
+      }
+    ]
+  },
+  {
+    "id": "109",
+    "name": "SINLEADER BLACK HEAVY",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 32
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 34
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 36
+      }
+    ]
+  },
+  {
+    "id": "110",
+    "name": "SOUTH HEAVY DILIVERY PIPE",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 70
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 72
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 74
+      }
+    ]
+  },
+  {
+    "id": "111",
+    "name": "SISA HEAVY DILIVERY PIPE",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 1290
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 1320
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 1350
+      }
+    ]
+  },
+  {
+    "id": "112",
+    "name": "SISA HEAVY HTP",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 2700
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 2750
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 2800
+      }
+    ]
+  },
+  {
+    "id": "113",
+    "name": "JET HAND GUN (CHINA)",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 140
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 145
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 150
+      }
+    ]
+  },
+  {
+    "id": "115",
+    "name": "YELLOW TRIGGER (CHINA)",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 26
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 28
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 30
+      }
+    ]
+  },
+  {
+    "id": "116",
+    "name": "RED TRIGGER (CHINA)",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 13
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 14
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 15
+      }
+    ]
+  },
+  {
+    "id": "117",
+    "name": "SINLEADER COLOUR HEAVY",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 52
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 54
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 56
+      }
+    ]
+  },
+  {
+    "id": "118",
+    "name": "SINLEADER HEAVY BRASS",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 50
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 52
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 54
+      }
+    ]
+  },
+  {
+    "id": "119",
+    "name": "SINLEADER HEAVY PVC TRIGGER",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 31
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 33
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 35
+      }
+    ]
+  },
+  {
+    "id": "120",
+    "name": "HANDLE WITH VALVE",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 70
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 75
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 80
+      }
+    ]
+  },
+  {
+    "id": "121",
+    "name": "BRASS IN AND OUT THREAD",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 30
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 35
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 40
+      }
+    ]
+  },
+  {
+    "id": "122",
+    "name": "DOUBLE DILIVERY JOINTER",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 10
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 11
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 12
+      }
+    ]
+  },
+  {
+    "id": "123",
+    "name": "LANCE JOINT",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 4
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 5
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 6
+      }
+    ]
+  },
+  {
+    "id": "124",
+    "name": "INNER FILTER SMALL",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 6
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 7
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 8
+      }
+    ]
+  },
+  {
+    "id": "125",
+    "name": "DOUBLE DELIVERY JOINTER",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 5
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 6
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 7
+      }
+    ]
+  },
+  {
+    "id": "126",
+    "name": "ALBA SMALL IMPORTED",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 4
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 5
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 6
+      }
+    ]
+  },
+  {
+    "id": "128",
+    "name": "ALBA BIG IMPORTED",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 5
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 6
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 7
+      }
+    ]
+  },
+  {
+    "id": "131",
+    "name": "DELIVERY COUPLER SET(2-2",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 3
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 4
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 5
+      }
+    ]
+  },
+  {
+    "id": "133",
+    "name": "WISHER SMALL 1 KG",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 700
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 750
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 800
+      }
+    ]
+  },
+  {
+    "id": "134",
+    "name": "WISHER 1 KG",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 750
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 800
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 850
+      }
+    ]
+  },
+  {
+    "id": "135",
+    "name": "WISHER HARD BLUE 1 KG",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 800
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 850
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 900
+      }
+    ]
+  },
+  {
+    "id": "136",
+    "name": "1 HOLE LOK TYPE NOZZLE",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 7
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 8
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 9
+      }
+    ]
+  },
+  {
+    "id": "137",
+    "name": "RAINMARK PREMIUM NOZZLE",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 15
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 16
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 17
+      }
+    ]
+  },
+  {
+    "id": "138",
+    "name": "RAINMARK PREMIUM NOZZLE",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 14
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 15
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 16
+      }
+    ]
+  },
+  {
+    "id": "139",
+    "name": "SISA CLEAR PREMIUM NOZZLE",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 13
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 14
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 15
+      }
+    ]
+  },
+  {
+    "id": "140",
+    "name": "SISA CLEAR PREMIUM NOZZLE",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 12
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 13
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 14
+      }
+    ]
+  },
+  {
+    "id": "141",
+    "name": "SISA CLEAR PREMIUM NOZZLE",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 15
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 16
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 17
+      }
+    ]
+  },
+  {
+    "id": "142",
+    "name": "SISA CLEAR PREMIUM NOZZLE",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 15
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 16
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 17
+      }
+    ]
+  },
+  {
+    "id": "143",
+    "name": "SISA CLEAR PREMIUM NOZZLE",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 11
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 12
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 13
+      }
+    ]
+  },
+  {
+    "id": "144",
+    "name": "BIG UMBRELLA",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 25
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 27
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 29
+      }
+    ]
+  },
+  {
+    "id": "145",
+    "name": "BIG UMBRELLA",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 27
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 29
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 31
+      }
+    ]
+  },
+  {
+    "id": "146",
+    "name": "RAINMARK",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 95
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 100
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 105
+      }
+    ]
+  },
+  {
+    "id": "147",
+    "name": "RAINMARK",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 110
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 115
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 120
+      }
+    ]
+  },
+  {
+    "id": "148",
+    "name": "RAINMARK",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 125
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 130
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 135
+      }
+    ]
+  },
+  {
+    "id": "149",
+    "name": "3 4 5 6 INDIAN BRASS THREAD",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 8
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 9
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 10
+      }
+    ]
+  },
+  {
+    "id": "150",
+    "name": "12 HOLE INDIAN BRASS THREAD",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 15
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 16
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 17
+      }
+    ]
+  },
+  {
+    "id": "151",
+    "name": "G GO PREMIUM NOZZLE 3,4,5,6",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 10
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 11
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 12
+      }
+    ]
+  },
+  {
+    "id": "152",
+    "name": "8 HOLE BEND CLEAR",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 10
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 11
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 12
+      }
+    ]
+  },
+  {
+    "id": "153",
+    "name": "SKY NOZZLE 8 HOLE BEND",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 17
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 18
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 19
+      }
+    ]
+  },
+  {
+    "id": "154",
+    "name": "NOZZLE 8 HOLE BEND",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 10
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 11
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 12
+      }
+    ]
+  },
+  {
+    "id": "155",
+    "name": "ORANGE NOZZLE 8 HOLE BEND",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 12
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 13
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 14
+      }
+    ]
+  },
+  {
+    "id": "156",
+    "name": "8 HOLE CLEAR STRAIGHT",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 11
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 12
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 13
+      }
+    ]
+  },
+  {
+    "id": "157",
+    "name": "2 FACE ORANGE 4-4 HOLE",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 25
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 26
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 27
+      }
+    ]
+  },
+  {
+    "id": "158",
+    "name": "CHINA PREMIUM F",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 5
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 6
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 7
+      }
+    ]
+  },
+  {
+    "id": "159",
+    "name": "BCN BIG 3,4,5,6 HOLE BRASS",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 11
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 12
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 13
+      }
+    ]
+  },
+  {
+    "id": "160",
+    "name": "BCN SMALL 3,4,5,6 HOLE BRASS",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 10
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 11
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 12
+      }
+    ]
+  },
+  {
+    "id": "161",
+    "name": "SQUARE 3,4,5,6 HOLE BRASS",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 12
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 13
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 14
+      }
+    ]
+  },
+  {
+    "id": "162",
+    "name": "PREMIUM MIST NOZZLE WITH 2",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 75
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 80
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 85
+      }
+    ]
+  },
+  {
+    "id": "163",
+    "name": "PREMIUM MIST NOZZLE WITH 2",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 25
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 27
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 29
+      }
+    ]
+  },
+  {
+    "id": "164",
+    "name": "PREMIUM 1 HOLE NOZZLE WITH",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 11
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 12
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 13
+      }
+    ]
+  },
+  {
+    "id": "165",
+    "name": "NOZZLE 1 HOLE PVC PLATE",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 11
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 12
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 13
+      }
+    ]
+  },
+  {
+    "id": "166",
+    "name": "3 MT BLUE NOZZLE",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 20
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 21
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 22
+      }
+    ]
+  },
+  {
+    "id": "167",
+    "name": "2 MT BLUE NOZZLE",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 18
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 19
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 20
+      }
+    ]
+  },
+  {
+    "id": "168",
+    "name": "PREMIUM NOZZLE 4 HOLE",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 4
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 5
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 6
+      }
+    ]
+  },
+  {
+    "id": "169",
+    "name": "PREMIUM 5 HOLE SS BEND",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 6
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 7
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 8
+      }
+    ]
+  },
+  {
+    "id": "170",
+    "name": "SISA PREMIUM NOZZLE CUTT",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 11
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 12
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 13
+      }
+    ]
+  },
+  {
+    "id": "171",
+    "name": "NOZZLE WHITE 7 HOLE BEND",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 9
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 10
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 11
+      }
+    ]
+  },
+  {
+    "id": "172",
+    "name": "SINLEADER 2 FACE BRASS MIST",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 20
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 21
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 22
+      }
+    ]
+  },
+  {
+    "id": "173",
+    "name": "CHINA IMPORTED 15 WATT",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 65
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 70
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 75
+      }
+    ]
+  },
+  {
+    "id": "174",
+    "name": "SISA 15 WATT BULB WITH",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 70
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 72
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 75
+      }
+    ]
+  },
+  {
+    "id": "175",
+    "name": "9 WATT BULB WITH 5 FT",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 35
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 37
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 39
+      }
+    ]
+  },
+  {
+    "id": "176",
+    "name": "7 WATT BULB WITH 5 FT",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 25
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 27
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 29
+      }
+    ]
+  },
+  {
+    "id": "178",
+    "name": "2 IN 1 SIDE SMALL CAP",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 8
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 9
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 10
+      }
+    ]
+  },
+  {
+    "id": "181",
+    "name": "PREMIUM TRANSPARENT",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 300,
+        "price": 27
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 30
+      }
+    ]
+  },
+  {
+    "id": "182",
+    "name": "MOTOR “Y” CONNECTOR",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 6
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 7
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 8
+      }
+    ]
+  },
+  {
+    "id": "184",
+    "name": "PORTABLE SPRAYER BIG",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 300,
+        "price": 42
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 45
+      }
+    ]
+  },
+  {
+    "id": "185",
+    "name": "TANK FILTER 16L",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 8
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 9
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 10
+      }
+    ]
+  },
+  {
+    "id": "186",
+    "name": "TANK FILTER 20L",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 9
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 10
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 11
+      }
+    ]
+  },
+  {
+    "id": "189",
+    "name": "TWO WAY SWITCH WITH WIRE",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 15
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 16
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 17
+      }
+    ]
+  },
+  {
+    "id": "190",
+    "name": "DUAL SWITCH WITH WIRE",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 18
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 19
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 20
+      }
+    ]
+  },
+  {
+    "id": "191",
+    "name": "SWITCH SMALL 2 WAY WITH",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 16
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 17
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 18
+      }
+    ]
+  },
+  {
+    "id": "192",
+    "name": "ROUND SWITCH WITH WIRE",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 14
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 15
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 16
+      }
+    ]
+  },
+  {
+    "id": "193",
+    "name": "SISA COLOUR SOCKET WITH",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 14
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 15
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 16
+      }
+    ]
+  },
+  {
+    "id": "194",
+    "name": "SOCKET WITH WIRE BRASS",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 11
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 12
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 13
+      }
+    ]
+  },
+  {
+    "id": "195",
+    "name": "SOCKET WITH WIRE",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 8
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 9
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 10
+      }
+    ]
+  },
+  {
+    "id": "196",
+    "name": "DIGITAL VOLT METER",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 300,
+        "price": 26
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 27
+      }
+    ]
+  },
+  {
+    "id": "197",
+    "name": "LED VOLT METER",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 8
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 9
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 10
+      }
+    ]
+  },
+  {
+    "id": "198",
+    "name": "PUSH CLAMP SMALL",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 300,
+        "price": 4.5
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 5.5
+      }
+    ]
+  },
+  {
+    "id": "200",
+    "name": "TAIWAN CLAMP SS 5/8",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 3
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 3.5
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 4
+      }
+    ]
+  },
+  {
+    "id": "201",
+    "name": "GUN HANDLE",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 15
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 16
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 17
+      }
+    ]
+  },
+  {
+    "id": "202",
+    "name": "TANK CAP AIR KEY",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 300,
+        "price": 800
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 850
+      }
+    ]
+  },
+  {
+    "id": "203",
+    "name": "BATTERY SUPPORT CLAMP",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 9
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 10
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 11
+      }
+    ]
+  },
+  {
+    "id": "204",
+    "name": "BATTERY SUPPORT CLAMP",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 8
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 9
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 10
+      }
+    ]
+  },
+  {
+    "id": "205",
+    "name": "SPRAYER TANK BACK SHEET",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 300,
+        "price": 27
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 30
+      }
+    ]
+  },
+  {
+    "id": "207",
+    "name": "SS BUCKLE SET 2 INCH",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 18
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 19
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 20
+      }
+    ]
+  },
+  {
+    "id": "209",
+    "name": "CODE WIRE",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 15
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 16
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 17
+      }
+    ]
+  },
+  {
+    "id": "211",
+    "name": "INSIDE OUTSIDE BRASS",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 300,
+        "price": 53
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 56
+      }
+    ]
+  },
+  {
+    "id": "214",
+    "name": "TANK BASE SCREWS",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 300,
+        "price": 625
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 650
+      }
+    ]
+  },
+  {
+    "id": "215",
+    "name": "BATTERY CLAMP SCREWS",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 300,
+        "price": 675
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 700
+      }
+    ]
+  },
+  {
+    "id": "225",
+    "name": "SPARK PLUG 139-F",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 32
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 34
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 36
+      }
+    ]
+  },
+  {
+    "id": "226",
+    "name": "SPARK PLUG GX-25",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 34
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 36
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 38
+      }
+    ]
+  },
+  {
+    "id": "227",
+    "name": "BIG DINT ORIGINAL",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 300,
+        "price": 410
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 430
+      }
+    ]
+  },
+  {
+    "id": "228",
+    "name": "BIG DINT ORIGINAL",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 300,
+        "price": 350
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 370
+      }
+    ]
+  },
+  {
+    "id": "229",
+    "name": "ORIGINAL CARBURATOR",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 300,
+        "price": 290
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 310
+      }
+    ]
+  },
+  {
+    "id": "233",
+    "name": "TU26 RECOIL STARTER",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 70
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 75
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 80
+      }
+    ]
+  },
+  {
+    "id": "234",
+    "name": "CLUTCH SHOE HLK ORIGINAL",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 65
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 70
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 75
+      }
+    ]
+  },
+  {
+    "id": "235",
+    "name": "CLUTCH DRUM BELL",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 50
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 55
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 60
+      }
+    ]
+  },
+  {
+    "id": "238",
+    "name": "CARBURATOR PREMIUM",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 6
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 7
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 8
+      }
+    ]
+  },
+  {
+    "id": "239",
+    "name": "BIG GEAR WHEEL 139F AND",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 95
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 100
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 105
+      }
+    ]
+  },
+  {
+    "id": "240",
+    "name": "FINGER WHEEL 139F AND",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 45
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 50
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 55
+      }
+    ]
+  },
+  {
+    "id": "241",
+    "name": "ACCELATOR THROTTLE LIVER",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 12
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 13
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 14
+      }
+    ]
+  },
+  {
+    "id": "242",
+    "name": "IGNITION COIL 139F AND",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 300,
+        "price": 160
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 170
+      }
+    ]
+  },
+  {
+    "id": "244",
+    "name": "HUASHENG SS PLUNGER",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 300,
+        "price": 190
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 195
+      }
+    ]
+  },
+  {
+    "id": "248",
+    "name": "PREMIUM BELT 708",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 600,
+        "price": 85
+      },
+      {
+        "minimumQuantity": 300,
+        "price": 90
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 95
+      }
+    ]
+  },
+  {
+    "id": "249",
+    "name": "PREMIUM 2 FT 60CM GUN",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 300,
+        "price": 350
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 370
+      }
+    ]
+  },
+  {
+    "id": "250",
+    "name": "2 FT 60CM GUN HTP AND",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 300,
+        "price": 360
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 380
+      }
+    ]
+  },
+  {
+    "id": "251",
+    "name": "PREMIUM 2 FT 60CM GUN",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 300,
+        "price": 410
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 430
+      }
+    ]
+  },
+  {
+    "id": "253",
+    "name": "PREMIUM 1 FT JET GUN",
+    "category": "Spare Parts & Accessories",
+    "priceTiers": [
+      {
+        "minimumQuantity": 300,
+        "price": 310
+      },
+      {
+        "minimumQuantity": 100,
+        "price": 330
+      }
+    ]
+  },
+  { "id": "21", "name": "SQUARE SPRAYER 16L", "category": "Battery Sprayers", "priceTiers": [{ "minimumQuantity": 300, "price": 2350 }, { "minimumQuantity": 60, "price": 2380 }, { "minimumQuantity": 15, "price": 2410 }] },
+  { "id": "31", "name": "RAINMARK PRO+ COPPER PUMP CAR WASHER", "category": "Agricultural Equipment", "priceTiers": [{ "minimumQuantity": 300, "price": 3700 }, { "minimumQuantity": 60, "price": 3800 }, { "minimumQuantity": 15, "price": 3900 }] },
+  { "id": "32", "name": "RAINMARK COPPER MIX PUMP CAR WASHER", "category": "Agricultural Equipment", "priceTiers": [{ "minimumQuantity": 300, "price": 2600 }, { "minimumQuantity": 60, "price": 2700 }, { "minimumQuantity": 15, "price": 2800 }] },
+  { "id": "33", "name": "TANK ONLY 16L", "category": "Spare Parts & Accessories", "priceTiers": [{ "minimumQuantity": 600, "price": 400 }, { "minimumQuantity": 300, "price": 420 }, { "minimumQuantity": 100, "price": 440 }] },
+  { "id": "34", "name": "TANK ONLY 20L", "category": "Spare Parts & Accessories", "priceTiers": [{ "minimumQuantity": 600, "price": 420 }, { "minimumQuantity": 300, "price": 440 }, { "minimumQuantity": 100, "price": 460 }] },
+  { "id": "52", "name": "JHUHA OR SHENGDELI 12V16AH BATTERY", "category": "Spare Parts & Accessories", "priceTiers": [{ "minimumQuantity": 600, "price": 760 }, { "minimumQuantity": 300, "price": 780 }, { "minimumQuantity": 100, "price": 800 }] },
+  { "id": "90", "name": "1 HEAD BRASS LANCE", "category": "Spare Parts & Accessories", "priceTiers": [{ "minimumQuantity": 600, "price": 32 }, { "minimumQuantity": 300, "price": 34 }, { "minimumQuantity": 100, "price": 36 }] },
+  { "id": "94", "name": "DHOSARI 40 INCH", "category": "Spare Parts & Accessories", "priceTiers": [{ "minimumQuantity": 600, "price": 150 }, { "minimumQuantity": 300, "price": 155 }, { "minimumQuantity": 100, "price": 160 }] },
+  { "id": "114", "name": "BRASS TRIGGER (CHINA) HEAVY", "category": "Spare Parts & Accessories", "priceTiers": [{ "minimumQuantity": 600, "price": 49 }, { "minimumQuantity": 300, "price": 50 }, { "minimumQuantity": 100, "price": 51 }] },
+  { "id": "129", "name": "LANCE STAND SINLEADER", "category": "Spare Parts & Accessories", "priceTiers": [{ "minimumQuantity": 600, "price": 5 }, { "minimumQuantity": 300, "price": 6 }, { "minimumQuantity": 100, "price": 7 }] },
+  { "id": "130", "name": "GUN NUT", "category": "Spare Parts & Accessories", "priceTiers": [{ "minimumQuantity": 600, "price": 3 }, { "minimumQuantity": 300, "price": 4 }, { "minimumQuantity": 100, "price": 5 }] },
+  { "id": "132", "name": "MOTOR THREAD CONNECTOR", "category": "Spare Parts & Accessories", "priceTiers": [{ "minimumQuantity": 600, "price": 4 }, { "minimumQuantity": 300, "price": 5 }, { "minimumQuantity": 100, "price": 6 }] },
+  { "id": "177", "name": "TANK CAP 16L", "category": "Spare Parts & Accessories", "priceTiers": [{ "minimumQuantity": 600, "price": 12 }, { "minimumQuantity": 300, "price": 13 }, { "minimumQuantity": 100, "price": 14 }] },
+  { "id": "179", "name": "TANK SIDE SMALL CAP", "category": "Spare Parts & Accessories", "priceTiers": [{ "minimumQuantity": 600, "price": 8 }, { "minimumQuantity": 300, "price": 9 }, { "minimumQuantity": 100, "price": 10 }] },
+  { "id": "180", "name": "ROUND HOOD VIRGIN", "category": "Spare Parts & Accessories", "priceTiers": [{ "minimumQuantity": 600, "price": 15 }, { "minimumQuantity": 300, "price": 17 }, { "minimumQuantity": 100, "price": 18 }] },
+  { "id": "183", "name": "INNER FILTER WHITE BIG", "category": "Spare Parts & Accessories", "priceTiers": [{ "minimumQuantity": 600, "price": 18 }, { "minimumQuantity": 300, "price": 19 }, { "minimumQuantity": 100, "price": 20 }] },
+  { "id": "188", "name": "SWITCH WITH WIRE BRASS CONTACT CHINA", "category": "Spare Parts & Accessories", "priceTiers": [{ "minimumQuantity": 600, "price": 12 }, { "minimumQuantity": 300, "price": 13 }, { "minimumQuantity": 100, "price": 14 }] },
+  { "id": "199", "name": "PUSH CLAMP SMALL", "category": "Spare Parts & Accessories", "priceTiers": [{ "minimumQuantity": 300, "price": 4.5 }, { "minimumQuantity": 100, "price": 5.5 }] },
+  { "id": "206", "name": "PVC BUCKLE SET 2 INCH", "category": "Spare Parts & Accessories", "priceTiers": [{ "minimumQuantity": 600, "price": 9 }, { "minimumQuantity": 300, "price": 10 }, { "minimumQuantity": 100, "price": 11 }] },
+  { "id": "224", "name": "SPARK PLUG GX35", "category": "Spare Parts & Accessories", "priceTiers": [{ "minimumQuantity": 600, "price": 34 }, { "minimumQuantity": 300, "price": 36 }, { "minimumQuantity": 100, "price": 38 }] },
+  { "id": "230", "name": "GX35 RECOIL STARTER", "category": "Spare Parts & Accessories", "priceTiers": [{ "minimumQuantity": 600, "price": 85 }, { "minimumQuantity": 300, "price": 90 }, { "minimumQuantity": 100, "price": 95 }] },
+  { "id": "231", "name": "139F NEW RECOIL STARTER", "category": "Spare Parts & Accessories", "priceTiers": [{ "minimumQuantity": 600, "price": 90 }, { "minimumQuantity": 300, "price": 95 }, { "minimumQuantity": 100, "price": 100 }] },
+  { "id": "232", "name": "139F OLD RECOIL STARTER", "category": "Spare Parts & Accessories", "priceTiers": [{ "minimumQuantity": 600, "price": 90 }, { "minimumQuantity": 300, "price": 95 }, { "minimumQuantity": 100, "price": 100 }] },
+  { "id": "236", "name": "16MM VALVE SET ASSEMBLY SS", "category": "Spare Parts & Accessories", "priceTiers": [{ "minimumQuantity": 600, "price": 12 }, { "minimumQuantity": 300, "price": 13 }, { "minimumQuantity": 100, "price": 14 }] },
+  { "id": "237", "name": "18MM VALVE SET ASSEMBLY SS", "category": "Spare Parts & Accessories", "priceTiers": [{ "minimumQuantity": 600, "price": 13 }, { "minimumQuantity": 300, "price": 14 }, { "minimumQuantity": 100, "price": 15 }] },
+  { "id": "243", "name": "ACCELERATOR WIRE", "category": "Spare Parts & Accessories", "priceTiers": [{ "minimumQuantity": 600, "price": 25 }, { "minimumQuantity": 300, "price": 27 }, { "minimumQuantity": 100, "price": 28 }] },
+  { "id": "245", "name": "PETROL PIPE SET BIG", "category": "Spare Parts & Accessories", "priceTiers": [{ "minimumQuantity": 600, "price": 7 }, { "minimumQuantity": 300, "price": 8 }, { "minimumQuantity": 100, "price": 9 }] },
+  { "id": "246", "name": "18MM V PACKING HEAVY", "category": "Spare Parts & Accessories", "priceTiers": [{ "minimumQuantity": 600, "price": 2.5 }, { "minimumQuantity": 300, "price": 3 }, { "minimumQuantity": 100, "price": 3.5 }] },
+  { "id": "247", "name": "SMALL FILTER 708", "category": "Spare Parts & Accessories", "priceTiers": [{ "minimumQuantity": 600, "price": 6 }, { "minimumQuantity": 300, "price": 7 }, { "minimumQuantity": 100, "price": 8 }] },
+  { "id": "252", "name": "PREMIUM 1 FT CERAMIC GUN IMPORTED 30CM", "category": "Spare Parts & Accessories", "priceTiers": [{ "minimumQuantity": 300, "price": 350 }, { "minimumQuantity": 100, "price": 370 }] }
+]

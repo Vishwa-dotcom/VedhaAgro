@@ -13,6 +13,7 @@ interface ProductContextType {
 }
 
 const ProductContext = createContext<ProductContextType | undefined>(undefined);
+const CATALOG_VERSION = 'vedha-pricelist-2026-2027-pdf-import-v6';
 
 export const ProductProvider: React.FC<{ children: React.ReactNode }> = ({
   children,
@@ -26,17 +27,47 @@ export const ProductProvider: React.FC<{ children: React.ReactNode }> = ({
     if (savedProducts) {
       try {
         const parsedProducts = JSON.parse(savedProducts);
+        const catalogVersion = localStorage.getItem('vedha-catalog-version');
+        const savedCatalog = new Map(
+          Array.isArray(parsedProducts)
+            ? parsedProducts
+                .filter((product: Product) => product.id.startsWith('pdf-'))
+                .map((product: Product) => [product.id, product])
+            : []
+        );
+        const hasCurrentPdfCatalog = savedCatalog.size === initialProducts.length
+          && initialProducts.every((product) => {
+            const savedProduct = savedCatalog.get(product.id);
+            return savedProduct?.name === product.name
+              && savedProduct?.thumbnail === product.thumbnail
+              && JSON.stringify(savedProduct?.images) === JSON.stringify(product.images)
+              && JSON.stringify(savedProduct?.specifications) === JSON.stringify(product.specifications)
+              && JSON.stringify(savedProduct?.priceTiers) === JSON.stringify(product.priceTiers);
+          });
+        const isCurrentCatalog = catalogVersion === CATALOG_VERSION && hasCurrentPdfCatalog;
+        const adminProducts = isCurrentCatalog
+          ? []
+          : parsedProducts.filter(
+              (product: Product) => product.id.startsWith('product-')
+            );
+        const productsToLoad = isCurrentCatalog
+          ? parsedProducts
+          : [...initialProducts, ...adminProducts];
         // Convert date strings back to Date objects
-        const productsWithDates = parsedProducts.map((product: any) => ({
+        const productsWithDates = productsToLoad.map((product: Product) => ({
           ...product,
           createdAt: new Date(product.createdAt),
           updatedAt: new Date(product.updatedAt),
         }));
         setProducts(productsWithDates);
+        localStorage.setItem('vedha-catalog-version', CATALOG_VERSION);
       } catch (error) {
         console.error('Failed to load products:', error);
         setProducts(initialProducts);
+        localStorage.setItem('vedha-catalog-version', CATALOG_VERSION);
       }
+    } else {
+      localStorage.setItem('vedha-catalog-version', CATALOG_VERSION);
     }
     setMounted(true);
   }, []);

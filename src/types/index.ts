@@ -11,6 +11,11 @@ export interface User {
 }
 
 // Product Types
+export interface ProductPriceTier {
+  minimumQuantity: number;
+  price: number;
+}
+
 export interface Product {
   id: string;
   name: string;
@@ -22,8 +27,9 @@ export interface Product {
   features: string[];
   images: string[];
   thumbnail: string;
-  quantity: number;
+  quantity: number | null;
   sku: string;
+  priceTiers?: ProductPriceTier[];
   createdAt: Date;
   updatedAt: Date;
 }

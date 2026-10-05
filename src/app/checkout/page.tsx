@@ -104,13 +104,16 @@ export default function CheckoutPage() {
   };
 
   const handleSubmit = () => {
+    if (items.length === 0) {
+      return;
+    }
+
     if (validateForm()) {
       const newOrderId = generateOrderId();
-      
-      // Create order object
+
       const newOrder: Order = {
         id: newOrderId,
-        userId: 'guest-user', // In a real app, this would be the logged-in user
+        userId: 'guest-user',
         items: items.map((item) => ({
           id: item.id,
           productId: item.productId,
@@ -141,8 +144,29 @@ export default function CheckoutPage() {
         updatedAt: new Date(),
       };
 
-      // Save order and clear cart
       addOrder(newOrder);
+
+      const notification = {
+        id: `notification-${Date.now()}`,
+        title: 'New order received',
+        orderId: newOrder.id,
+        customerName: newOrder.deliveryAddress.name,
+        totalAmount: formatCurrency(newOrder.total),
+        createdAt: new Date().toISOString(),
+      };
+
+      const storedNotifications = JSON.parse(
+        localStorage.getItem('vedha-admin-notifications') || '[]'
+      );
+      const updatedNotifications = [notification, ...storedNotifications].slice(0, 20);
+      localStorage.setItem(
+        'vedha-admin-notifications',
+        JSON.stringify(updatedNotifications)
+      );
+      window.dispatchEvent(
+        new CustomEvent('admin-notification', { detail: notification })
+      );
+
       setOrderId(newOrderId);
       setIsSubmitted(true);
       clearCart();

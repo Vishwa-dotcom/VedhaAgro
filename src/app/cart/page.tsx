@@ -4,7 +4,7 @@ import { useCart } from '@/context/CartContext';
 import Link from 'next/link';
 import Image from 'next/image';
 import { formatCurrency } from '@/lib/utils';
-import { Trash2, Plus, Minus, ShoppingBag } from 'lucide-react';
+import { Trash2, Plus, Minus, ShoppingBag, Package } from 'lucide-react';
 
 export default function CartPage() {
   const { items, removeItem, updateQuantity, getSubtotal, getTax, getTotal } =
@@ -47,13 +47,19 @@ export default function CartPage() {
                   {/* Product Image */}
                   <Link href={`/products/${item.productId}`}>
                     <div className="relative w-24 h-24 bg-gray-100 rounded-lg flex-shrink-0 cursor-pointer hover:opacity-80 transition">
-                      <Image
-                        src={item.product?.thumbnail || item.product?.images[0] || 'https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=500'}
-                        alt={item.product?.name || 'Product'}
-                        fill
-                        className="object-cover rounded-lg"
-                        unoptimized
-                      />
+                      {item.product?.thumbnail || item.product?.images[0] ? (
+                        <Image
+                          src={item.product.thumbnail || item.product.images[0]}
+                          alt={item.product.name}
+                          fill
+                          className="object-cover rounded-lg"
+                          unoptimized
+                        />
+                      ) : (
+                        <div className="flex h-full items-center justify-center text-gray-400">
+                          <Package size={30} strokeWidth={1.25} />
+                        </div>
+                      )}
                     </div>
                   </Link>
 
@@ -78,6 +84,7 @@ export default function CartPage() {
                       onClick={() =>
                         updateQuantity(item.productId, item.quantity - 1)
                       }
+                      aria-label={`Decrease ${item.product?.name ?? 'product'} quantity`}
                       className="p-1 text-gray-600 hover:bg-gray-100 rounded transition"
                     >
                       <Minus size={16} />
@@ -92,6 +99,7 @@ export default function CartPage() {
                           item.quantity + 1
                         )
                       }
+                      aria-label={`Increase ${item.product?.name ?? 'product'} quantity`}
                       className="p-1 text-gray-600 hover:bg-gray-100 rounded transition"
                     >
                       <Plus size={16} />

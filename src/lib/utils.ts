@@ -1,3 +1,5 @@
+import { Product } from '@/types';
+
 // Common utility functions
 
 export const formatCurrency = (amount: number): string => {
@@ -23,15 +25,30 @@ export const calculateDiscount = (
   return Math.round(((originalPrice - currentPrice) / originalPrice) * 100);
 };
 
+export const getMinimumOrderQuantity = (product: Product): number => {
+  return product.priceTiers?.length
+    ? Math.min(...product.priceTiers.map((tier) => tier.minimumQuantity))
+    : 1;
+};
+
+export const getProductPrice = (product: Product, quantity: number): number => {
+  if (!product.priceTiers?.length) return product.price;
+
+  const eligibleTier = product.priceTiers
+    .filter((tier) => tier.minimumQuantity <= quantity)
+    .sort((first, second) => second.minimumQuantity - first.minimumQuantity)[0];
+
+  return eligibleTier?.price ?? product.price;
+};
+
 export const validateEmail = (email: string): boolean => {
   const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   return re.test(email);
 };
 
 export const validatePhone = (phone: string): boolean => {
-  // Indian phone number validation
-  const re = /^[6-9]\d{9}$/;
-  return re.test(phone.replace(/\D/g, ''));
+  const digits = phone.replace(/\D/g, '');
+  return digits.length >= 10 && digits.length <= 12;
 };
 
 export const validatePincode = (pincode: string): boolean => {
