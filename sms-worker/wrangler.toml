@@ -1,0 +1,6 @@
+name = "vedha-agro-order-sms"
+main = "src/index.js"
+compatibility_date = "2026-10-05"
+
+[vars]
+ALLOWED_ORIGIN = "https://YOUR_GITHUB_PAGES_DOMAIN"

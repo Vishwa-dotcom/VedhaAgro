@@ -4,9 +4,31 @@ import { useCart } from '@/context/CartContext';
 import { useOrders } from '@/context/OrderContext';
 import { formatCurrency, generateOrderId, validateEmail, validatePhone, validatePincode } from '@/lib/utils';
 import Link from 'next/link';
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Check, AlertCircle } from 'lucide-react';
 import { Order } from '@/types';
+
+declare global {
+  interface Window {
+    turnstile?: {
+      render: (
+        container: HTMLElement,
+        options: {
+          sitekey: string;
+          callback: (token: string) => void;
+          'expired-callback': () => void;
+          'error-callback': () => void;
+        }
+      ) => string;
+      remove: (widgetId: string) => void;
+    };
+  }
+}
+
+type SmsStatus = 'not-configured' | 'sending' | 'sent' | 'failed';
+
+const smsEndpoint = process.env.NEXT_PUBLIC_ORDER_SMS_ENDPOINT;
+const turnstileSiteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
 
 export default function CheckoutPage() {
   const { items, getSubtotal, getTax, getTotal, clearCart } = useCart();
@@ -14,6 +36,11 @@ export default function CheckoutPage() {
   const [step, setStep] = useState(1);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [orderId, setOrderId] = useState<string>('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [orderError, setOrderError] = useState('');
+  const [smsStatus, setSmsStatus] = useState<SmsStatus>('not-configured');
+  const [turnstileToken, setTurnstileToken] = useState('');
+  const turnstileContainer = useRef<HTMLDivElement>(null);
 
   // Form data
   const [deliveryDetails, setDeliveryDetails] = useState({
@@ -26,8 +53,45 @@ export default function CheckoutPage() {
     pincode: '',
   });
 
-  const [paymentMethod, setPaymentMethod] = useState<'UPI' | 'CARD' | 'NETBANKING' | 'COD'>('COD');
+  const paymentMethod = 'COD' as const;
   const [errors, setErrors] = useState<Record<string, string>>({});
+
+  useEffect(() => {
+    if (step !== 3 || !smsEndpoint || !turnstileSiteKey || !turnstileContainer.current) return;
+
+    let widgetId: string | undefined;
+    let isActive = true;
+    const renderWidget = () => {
+      if (!isActive || !window.turnstile || !turnstileContainer.current) return;
+      widgetId = window.turnstile.render(turnstileContainer.current, {
+        sitekey: turnstileSiteKey,
+        callback: setTurnstileToken,
+        'expired-callback': () => setTurnstileToken(''),
+        'error-callback': () => setTurnstileToken(''),
+      });
+    };
+
+    const existingScript = document.querySelector<HTMLScriptElement>('script[data-turnstile]');
+    if (window.turnstile) {
+      renderWidget();
+    } else if (existingScript) {
+      existingScript.addEventListener('load', renderWidget, { once: true });
+    } else {
+      const script = document.createElement('script');
+      script.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit';
+      script.async = true;
+      script.defer = true;
+      script.dataset.turnstile = 'true';
+      script.addEventListener('load', renderWidget, { once: true });
+      document.head.appendChild(script);
+    }
+
+    return () => {
+      isActive = false;
+      if (widgetId && window.turnstile) window.turnstile.remove(widgetId);
+      setTurnstileToken('');
+    };
+  }, [step]);
 
   if (items.length === 0 && !isSubmitted) {
     return (
@@ -65,6 +129,20 @@ export default function CheckoutPage() {
           <p className="text-sm text-gray-500 mb-6">
             Order ID: <span className="font-bold text-gray-800">{orderId}</span>
           </p>
+          <div className="mb-6 rounded-lg bg-gray-50 p-4 text-left text-sm" role="status" aria-live="polite">
+            {smsStatus === 'sent' && (
+              <p className="text-green-700">The admin has been notified by SMS.</p>
+            )}
+            {smsStatus === 'sending' && (
+              <p className="text-gray-700">Sending the admin order notification…</p>
+            )}
+            {smsStatus === 'failed' && (
+              <p className="text-amber-800">Your order is saved, but the admin SMS could not be sent. Please contact Vedha Agro with your order ID.</p>
+            )}
+            {smsStatus === 'not-configured' && (
+              <p className="text-gray-700">Your order is saved. Admin SMS notifications are not configured for this deployment.</p>
+            )}
+          </div>
           <div className="flex flex-col gap-3">
             <Link
               href="/account/orders"
@@ -87,90 +165,150 @@ export default function CheckoutPage() {
   const validateForm = () => {
     const newErrors: Record<string, string> = {};
 
-    if (!deliveryDetails.name.trim()) newErrors.name = 'Name is required';
+    if (deliveryDetails.name.trim().length < 2 || deliveryDetails.name.trim().length > 100)
+      newErrors.name = 'Enter your name (2 to 100 characters).';
     if (!validateEmail(deliveryDetails.email))
-      newErrors.email = 'Valid email is required';
+      newErrors.email = 'Enter a valid email address.';
     if (!validatePhone(deliveryDetails.phone))
-      newErrors.phone = 'Valid phone number is required';
-    if (!deliveryDetails.address.trim())
-      newErrors.address = 'Address is required';
-    if (!deliveryDetails.city.trim()) newErrors.city = 'City is required';
-    if (!deliveryDetails.state.trim()) newErrors.state = 'State is required';
+      newErrors.phone = 'Enter a valid phone number (10 to 12 digits).';
+    if (deliveryDetails.address.trim().length < 5 || deliveryDetails.address.trim().length > 240)
+      newErrors.address = 'Enter an address (5 to 240 characters).';
+    if (deliveryDetails.city.trim().length < 2 || deliveryDetails.city.trim().length > 80)
+      newErrors.city = 'Enter a valid city.';
+    if (deliveryDetails.state.trim().length < 2 || deliveryDetails.state.trim().length > 80)
+      newErrors.state = 'Enter a valid state.';
     if (!validatePincode(deliveryDetails.pincode))
-      newErrors.pincode = 'Valid pincode is required';
+      newErrors.pincode = 'Enter a valid 6-digit pincode.';
 
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = () => {
-    if (items.length === 0) {
+  const handleSubmit = async () => {
+    if (items.length === 0 || isSubmitting) {
       return;
     }
 
-    if (validateForm()) {
-      const newOrderId = generateOrderId();
+    if (!validateForm()) {
+      setStep(1);
+      setOrderError('Please correct the highlighted delivery details before placing your order.');
+      return;
+    }
 
-      const newOrder: Order = {
-        id: newOrderId,
-        userId: 'guest-user',
-        items: items.map((item) => ({
-          id: item.id,
-          productId: item.productId,
-          productName: item.product?.name || 'Unknown Product',
-          quantity: item.quantity,
-          price: item.price,
-          subtotal: item.price * item.quantity,
-        })),
-        deliveryAddress: {
-          name: deliveryDetails.name,
-          email: deliveryDetails.email,
-          phone: deliveryDetails.phone,
-          address: deliveryDetails.address,
-          city: deliveryDetails.city,
-          state: deliveryDetails.state,
-          pincode: deliveryDetails.pincode,
-          isDefault: false,
-        },
-        subtotal: getSubtotal(),
-        tax: getTax(),
-        deliveryCharges: 0,
-        total: getTotal(),
-        paymentMethod: paymentMethod,
-        paymentStatus: 'completed',
-        orderStatus: 'confirmed',
-        notes: '',
-        createdAt: new Date(),
-        updatedAt: new Date(),
-      };
+    setIsSubmitting(true);
+    setOrderError('');
+    const newOrderId = generateOrderId();
+    const orderItems = items.map((item) => ({
+      id: item.id,
+      productId: item.productId,
+      productName: item.product?.name || 'Unknown Product',
+      quantity: item.quantity,
+      price: item.price,
+      subtotal: item.price * item.quantity,
+    }));
+    const subtotal = getSubtotal();
+    const tax = getTax();
+    const total = getTotal();
+    const newOrder: Order = {
+      id: newOrderId,
+      userId: 'guest-user',
+      items: orderItems,
+      deliveryAddress: {
+        name: deliveryDetails.name,
+        email: deliveryDetails.email,
+        phone: deliveryDetails.phone,
+        address: deliveryDetails.address,
+        city: deliveryDetails.city,
+        state: deliveryDetails.state,
+        pincode: deliveryDetails.pincode,
+        isDefault: false,
+      },
+      subtotal,
+      tax,
+      deliveryCharges: 0,
+      total,
+      paymentMethod,
+      paymentStatus: 'completed',
+      orderStatus: 'confirmed',
+      notes: '',
+      createdAt: new Date(),
+      updatedAt: new Date(),
+    };
 
+    try {
       addOrder(newOrder);
+    } catch (error) {
+      console.error('Failed to save order:', error);
+      setOrderError('We could not save your order. Please try again; your cart and details are still here.');
+      setIsSubmitting(false);
+      return;
+    }
 
-      const notification = {
-        id: `notification-${Date.now()}`,
-        title: 'New order received',
-        orderId: newOrder.id,
-        customerName: newOrder.deliveryAddress.name,
-        totalAmount: formatCurrency(newOrder.total),
-        createdAt: new Date().toISOString(),
-      };
+    const notification = {
+      id: `notification-${Date.now()}`,
+      title: 'New order received',
+      orderId: newOrder.id,
+      customerName: newOrder.deliveryAddress.name,
+      totalAmount: formatCurrency(newOrder.total),
+      createdAt: new Date().toISOString(),
+    };
 
+    try {
       const storedNotifications = JSON.parse(
         localStorage.getItem('vedha-admin-notifications') || '[]'
       );
       const updatedNotifications = [notification, ...storedNotifications].slice(0, 20);
-      localStorage.setItem(
-        'vedha-admin-notifications',
-        JSON.stringify(updatedNotifications)
-      );
-      window.dispatchEvent(
-        new CustomEvent('admin-notification', { detail: notification })
-      );
-
-      setOrderId(newOrderId);
-      setIsSubmitted(true);
-      clearCart();
+      localStorage.setItem('vedha-admin-notifications', JSON.stringify(updatedNotifications));
+      window.dispatchEvent(new CustomEvent('admin-notification', { detail: notification }));
+    } catch (error) {
+      console.error('Order saved, but local admin notification could not be stored:', error);
     }
+
+    setOrderId(newOrderId);
+    setIsSubmitted(true);
+    clearCart();
+    setSmsStatus(smsEndpoint && turnstileSiteKey ? 'sending' : 'not-configured');
+
+    if (smsEndpoint && turnstileSiteKey) {
+      const controller = new AbortController();
+      const timeoutId = window.setTimeout(() => controller.abort(), 8000);
+      try {
+        const response = await fetch(smsEndpoint, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            turnstileToken,
+            order: {
+              id: newOrder.id,
+              customer: {
+                name: newOrder.deliveryAddress.name,
+                phone: newOrder.deliveryAddress.phone,
+                email: newOrder.deliveryAddress.email,
+                address: newOrder.deliveryAddress.address,
+                city: newOrder.deliveryAddress.city,
+                state: newOrder.deliveryAddress.state,
+                pincode: newOrder.deliveryAddress.pincode,
+              },
+              items: newOrder.items.map((item) => ({
+                name: item.productName,
+                quantity: item.quantity,
+                unitPrice: item.price,
+              })),
+              total: newOrder.total,
+            },
+          }),
+          signal: controller.signal,
+        });
+        setSmsStatus(response.ok ? 'sent' : 'failed');
+      } catch (error) {
+        console.error('Order saved, but admin SMS notification failed:', error);
+        setSmsStatus('failed');
+      } finally {
+        window.clearTimeout(timeoutId);
+      }
+    }
+
+    setIsSubmitting(false);
   };
 
   return (
@@ -201,6 +339,13 @@ export default function CheckoutPage() {
         <div className="grid lg:grid-cols-3 gap-8">
           {/* Checkout Form */}
           <div className="lg:col-span-2">
+            {orderError && (
+              <div className="mb-5 flex items-start gap-3 rounded-lg border border-red-200 bg-red-50 p-4 text-red-800" role="alert">
+                <AlertCircle size={20} className="mt-0.5 shrink-0" />
+                <p>{orderError}</p>
+              </div>
+            )}
+
             {/* Step 1: Delivery Details */}
             {step === 1 && (
               <div className="bg-white rounded-lg shadow-md p-6">
@@ -214,8 +359,11 @@ export default function CheckoutPage() {
                       Full Name *
                     </label>
                     <input
+                      id="delivery-name"
                       type="text"
                       value={deliveryDetails.name}
+                      aria-invalid={Boolean(errors.name)}
+                      aria-describedby={errors.name ? 'delivery-name-error' : undefined}
                       onChange={(e) =>
                         setDeliveryDetails({ ...deliveryDetails, name: e.target.value })
                       }
@@ -223,7 +371,7 @@ export default function CheckoutPage() {
                       placeholder="John Doe"
                     />
                     {errors.name && (
-                      <p className="text-red-500 text-sm mt-1">{errors.name}</p>
+                      <p id="delivery-name-error" className="text-red-500 text-sm mt-1">{errors.name}</p>
                     )}
                   </div>
 
@@ -233,8 +381,11 @@ export default function CheckoutPage() {
                         Email *
                       </label>
                       <input
+                        id="delivery-email"
                         type="email"
                         value={deliveryDetails.email}
+                        aria-invalid={Boolean(errors.email)}
+                        aria-describedby={errors.email ? 'delivery-email-error' : undefined}
                         onChange={(e) =>
                           setDeliveryDetails({
                             ...deliveryDetails,
@@ -245,7 +396,7 @@ export default function CheckoutPage() {
                         placeholder="john@example.com"
                       />
                       {errors.email && (
-                        <p className="text-red-500 text-sm mt-1">{errors.email}</p>
+                        <p id="delivery-email-error" className="text-red-500 text-sm mt-1">{errors.email}</p>
                       )}
                     </div>
 
@@ -254,8 +405,11 @@ export default function CheckoutPage() {
                         Phone Number *
                       </label>
                       <input
+                        id="delivery-phone"
                         type="tel"
                         value={deliveryDetails.phone}
+                        aria-invalid={Boolean(errors.phone)}
+                        aria-describedby={errors.phone ? 'delivery-phone-error' : undefined}
                         onChange={(e) =>
                           setDeliveryDetails({
                             ...deliveryDetails,
@@ -266,7 +420,7 @@ export default function CheckoutPage() {
                         placeholder="9876543210"
                       />
                       {errors.phone && (
-                        <p className="text-red-500 text-sm mt-1">{errors.phone}</p>
+                        <p id="delivery-phone-error" className="text-red-500 text-sm mt-1">{errors.phone}</p>
                       )}
                     </div>
                   </div>
@@ -276,7 +430,10 @@ export default function CheckoutPage() {
                       Address *
                     </label>
                     <textarea
+                      id="delivery-address"
                       value={deliveryDetails.address}
+                      aria-invalid={Boolean(errors.address)}
+                      aria-describedby={errors.address ? 'delivery-address-error' : undefined}
                       onChange={(e) =>
                         setDeliveryDetails({
                           ...deliveryDetails,
@@ -288,7 +445,7 @@ export default function CheckoutPage() {
                       placeholder="House No., Street, Colony..."
                     />
                     {errors.address && (
-                      <p className="text-red-500 text-sm mt-1">{errors.address}</p>
+                      <p id="delivery-address-error" className="text-red-500 text-sm mt-1">{errors.address}</p>
                     )}
                   </div>
 
@@ -298,8 +455,11 @@ export default function CheckoutPage() {
                         City *
                       </label>
                       <input
+                        id="delivery-city"
                         type="text"
                         value={deliveryDetails.city}
+                        aria-invalid={Boolean(errors.city)}
+                        aria-describedby={errors.city ? 'delivery-city-error' : undefined}
                         onChange={(e) =>
                           setDeliveryDetails({
                             ...deliveryDetails,
@@ -310,7 +470,7 @@ export default function CheckoutPage() {
                         placeholder="Bangalore"
                       />
                       {errors.city && (
-                        <p className="text-red-500 text-sm mt-1">{errors.city}</p>
+                        <p id="delivery-city-error" className="text-red-500 text-sm mt-1">{errors.city}</p>
                       )}
                     </div>
 
@@ -319,8 +479,11 @@ export default function CheckoutPage() {
                         State *
                       </label>
                       <input
+                        id="delivery-state"
                         type="text"
                         value={deliveryDetails.state}
+                        aria-invalid={Boolean(errors.state)}
+                        aria-describedby={errors.state ? 'delivery-state-error' : undefined}
                         onChange={(e) =>
                           setDeliveryDetails({
                             ...deliveryDetails,
@@ -331,7 +494,7 @@ export default function CheckoutPage() {
                         placeholder="Karnataka"
                       />
                       {errors.state && (
-                        <p className="text-red-500 text-sm mt-1">{errors.state}</p>
+                        <p id="delivery-state-error" className="text-red-500 text-sm mt-1">{errors.state}</p>
                       )}
                     </div>
 
@@ -340,8 +503,11 @@ export default function CheckoutPage() {
                         Pincode *
                       </label>
                       <input
+                        id="delivery-pincode"
                         type="text"
                         value={deliveryDetails.pincode}
+                        aria-invalid={Boolean(errors.pincode)}
+                        aria-describedby={errors.pincode ? 'delivery-pincode-error' : undefined}
                         onChange={(e) =>
                           setDeliveryDetails({
                             ...deliveryDetails,
@@ -352,14 +518,21 @@ export default function CheckoutPage() {
                         placeholder="560001"
                       />
                       {errors.pincode && (
-                        <p className="text-red-500 text-sm mt-1">{errors.pincode}</p>
+                        <p id="delivery-pincode-error" className="text-red-500 text-sm mt-1">{errors.pincode}</p>
                       )}
                     </div>
                   </div>
                 </div>
 
                 <button
-                  onClick={() => setStep(2)}
+                  onClick={() => {
+                    if (validateForm()) {
+                      setOrderError('');
+                      setStep(2);
+                    } else {
+                      setOrderError('Please correct the highlighted delivery details.');
+                    }
+                  }}
                   className="w-full mt-6 bg-green-600 hover:bg-green-700 text-white font-bold py-3 rounded-lg transition"
                 >
                   Continue to Payment
@@ -374,37 +547,17 @@ export default function CheckoutPage() {
                   Payment Method
                 </h2>
 
-                <div className="space-y-4 mb-6">
-                  {['UPI', 'CARD', 'NETBANKING', 'COD'].map((method) => (
-                    <label
-                      key={method}
-                      className="flex items-center p-4 border border-gray-300 rounded-lg cursor-pointer hover:bg-gray-50 transition"
-                    >
-                      <input
-                        type="radio"
-                        name="payment"
-                        value={method}
-                        checked={paymentMethod === method}
-                        onChange={(e) =>
-                          setPaymentMethod(e.target.value as typeof paymentMethod)
-                        }
-                        className="w-4 h-4"
-                      />
-                      <span className="ml-3 font-semibold text-gray-800">
-                        {method === 'UPI' && '📱 UPI'}
-                        {method === 'CARD' && '💳 Credit/Debit Card'}
-                        {method === 'NETBANKING' && '🏦 Net Banking'}
-                        {method === 'COD' && '💵 Cash on Delivery'}
-                      </span>
-                    </label>
-                  ))}
-                </div>
-
-                <div className="bg-blue-50 p-4 rounded-lg mb-6">
-                  <p className="text-sm text-blue-800">
-                    <strong>Note:</strong> For this demo, no actual payment processing
-                    will occur. You can proceed with any payment method.
-                  </p>
+                <div className="mb-6 flex items-center gap-3 rounded-lg border border-green-600 bg-green-50 p-4">
+                  <input
+                    type="radio"
+                    name="payment"
+                    value="COD"
+                    checked
+                    readOnly
+                    aria-label="Cash on Delivery"
+                    className="h-4 w-4 accent-green-700"
+                  />
+                  <span className="font-semibold text-gray-800">Cash on Delivery</span>
                 </div>
 
                 <div className="flex gap-4">
@@ -446,13 +599,19 @@ export default function CheckoutPage() {
                 {/* Payment Method Summary */}
                 <div className="mb-6 p-4 bg-gray-50 rounded-lg">
                   <h3 className="font-bold text-gray-800 mb-2">Payment Method</h3>
-                  <p className="text-gray-700">
-                    {paymentMethod === 'UPI' && '📱 UPI'}
-                    {paymentMethod === 'CARD' && '💳 Credit/Debit Card'}
-                    {paymentMethod === 'NETBANKING' && '🏦 Net Banking'}
-                    {paymentMethod === 'COD' && '💵 Cash on Delivery'}
-                  </p>
+                  <p className="text-gray-700">Cash on Delivery</p>
                 </div>
+
+                {smsEndpoint && turnstileSiteKey ? (
+                  <div className="mb-6">
+                    <p className="text-sm font-semibold text-gray-700 mb-2">Security check for admin SMS</p>
+                    <div ref={turnstileContainer} />
+                  </div>
+                ) : (
+                  <p className="mb-6 rounded-lg bg-amber-50 p-3 text-sm text-amber-900">
+                    Admin SMS is not configured for this deployment. Orders can still be placed.
+                  </p>
+                )}
 
                 <div className="flex gap-4">
                   <button
@@ -463,9 +622,10 @@ export default function CheckoutPage() {
                   </button>
                   <button
                     onClick={handleSubmit}
-                    className="flex-1 bg-green-600 hover:bg-green-700 text-white font-bold py-3 rounded-lg transition"
+                    disabled={isSubmitting}
+                    className="flex-1 bg-green-600 hover:bg-green-700 disabled:cursor-wait disabled:opacity-60 text-white font-bold py-3 rounded-lg transition"
                   >
-                    Place Order
+                    {isSubmitting ? 'Saving order…' : 'Place Order'}
                   </button>
                 </div>
               </div>

@@ -1,6 +1,6 @@
 'use client';
 
-import React, { createContext, useContext, useState, useEffect } from 'react';
+import React, { createContext, useContext, useState, useEffect, useRef } from 'react';
 import { Order } from '@/types';
 import { products as catalogProducts } from '@/lib/sampleData';
 
@@ -18,6 +18,7 @@ export const OrderProvider: React.FC<{ children: React.ReactNode }> = ({
 }) => {
   const [orders, setOrders] = useState<Order[]>([]);
   const [mounted, setMounted] = useState(false);
+  const ordersRef = useRef<Order[]>([]);
 
   // Load orders from localStorage on mount
   useEffect(() => {
@@ -36,6 +37,7 @@ export const OrderProvider: React.FC<{ children: React.ReactNode }> = ({
           createdAt: new Date(order.createdAt),
           updatedAt: new Date(order.updatedAt),
         }));
+        ordersRef.current = ordersWithDates;
         setOrders(ordersWithDates);
       } catch (error) {
         console.error('Failed to load orders:', error);
@@ -52,7 +54,10 @@ export const OrderProvider: React.FC<{ children: React.ReactNode }> = ({
   }, [orders, mounted]);
 
   const addOrder = (order: Order) => {
-    setOrders((prevOrders) => [...prevOrders, order]);
+    const nextOrders = [...ordersRef.current, order];
+    localStorage.setItem('vedha-orders', JSON.stringify(nextOrders));
+    ordersRef.current = nextOrders;
+    setOrders(nextOrders);
   };
 
   const getOrderById = (orderId: string) => {
@@ -60,6 +65,8 @@ export const OrderProvider: React.FC<{ children: React.ReactNode }> = ({
   };
 
   const clearOrders = () => {
+    localStorage.setItem('vedha-orders', JSON.stringify([]));
+    ordersRef.current = [];
     setOrders([]);
   };
 
