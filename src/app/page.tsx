@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { ArrowRight, Leaf, Zap, Shield, Truck } from 'lucide-react';
 import ProductCard from '@/components/ProductCard';
 import { products } from '@/lib/sampleData';
+import { publicAssetPath } from '@/lib/publicAssets';
 
 export default function Home() {
   const featuredProducts = products;
@@ -43,7 +44,7 @@ export default function Home() {
           {/* Hero Image */}
           <div className="relative h-[420px] rounded-3xl overflow-hidden border-4 border-white/50 shadow-2xl">
             <Image
-              src="/sources/front.png"
+              src={publicAssetPath('/sources/front.png')}
               alt="Vedha Agro product banner"
               fill
               className="object-cover"

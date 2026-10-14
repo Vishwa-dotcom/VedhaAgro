@@ -1,5 +1,6 @@
 import catalogRows from '@/lib/pricelistCatalog.json';
 import productSpecifications from '@/lib/pricelistSpecifications.json';
+import { publicAssetPath } from '@/lib/publicAssets';
 import { Category, Product, ProductPriceTier } from '@/types';
 
 export const categories: Category[] = [
@@ -66,8 +67,8 @@ export const products: Product[] = [...(catalogRows as PricelistRow[])]
     description: 'Product information and quantity-based prices from the Vedha Agro 2026-2027 pricelist.',
     specifications: specificationsByPdfId[row.id] ?? {},
     features: [],
-    images: Number(row.id) <= 34 ? [`/catalog/pdf-${row.id}.png`] : [],
-    thumbnail: Number(row.id) <= 34 ? `/catalog/pdf-${row.id}.png` : '',
+    images: Number(row.id) <= 34 ? [publicAssetPath(`/catalog/pdf-${row.id}.png`)] : [],
+    thumbnail: Number(row.id) <= 34 ? publicAssetPath(`/catalog/pdf-${row.id}.png`) : '',
     quantity: null,
     sku: `PDF-${row.id}`,
     priceTiers,
